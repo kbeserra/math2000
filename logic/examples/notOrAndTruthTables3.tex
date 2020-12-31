@@ -1,0 +1,14 @@
+\guard
+
+\input{logic/defns/negation.tex}
+\input{logic/defns/disjunction.tex}
+\input{logic/defns/conjunction.tex}
+\input{logic/defns/statementForm.tex}
+\input{logic/defns/truthTable.tex}
+
+\begin{exmp}
+Truth tables for $(p\wedge q) \vee \neg r$
+  \begin{center}
+    \input{ |"python3 logic/scripts/generateTruthTable.py '(p&q)|!r'"}
+  \end{center}
+\end{exmp}

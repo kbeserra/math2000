@@ -1,0 +1,211 @@
+
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{tikz}
+	\usetikzlibrary{arrows,positioning,automata,backgrounds,calc,matrix}
+\usepackage{amsfonts, amssymb, mathrsfs}
+\usepackage{bbm}
+\usepackage{amsmath}
+\usepackage{amsthm}
+	\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem*{thm*}{Theorem}
+	\newtheorem{lem}[thm]{Lemma}
+	\newtheorem*{lem*}{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{claim}[thm]{Claim}
+	\newtheorem*{claim*}{Claim}
+	\newtheorem*{prop*}{Proposition}
+	\newtheorem*{cor}{Corollary}
+	\theoremstyle{definition}
+	\newtheorem{defn}{Definition}[section]
+	\newtheorem*{defn*}{Definition}
+	\newtheorem{conject}{Conjecture}[section]
+	\newtheorem{exmp}{Example}[section]
+	\newtheorem{exercise}{Exercise}
+	\theoremstyle{remark}
+	\newtheorem*{rem}{Remark}
+	\newtheorem*{note}{Note}
+	\newtheorem{case}{Case}
+	\newtheorem{notat}{Notation}
+\usepackage{latexsym}
+
+
+
+% For playing around
+%\usepackage{bbding}
+
+\newcommand{\blankPage}{
+	\newpage
+	\vfill
+	\begin{center}
+		Page intentionally left blank
+	\end{center}
+	\vfill
+	\newpage
+}
+
+
+
+\iffalse
+	A list of new commands that I frequently find useful and/or indispensable.
+
+	Known conflicts:
+		\alt conflicts with beamer.
+		\models conflicts with I do not know.
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sets and their operations:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\II}{\mathbb{I}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\BB}{\mathbb{B}}
+
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\Pow}[1]{\mathcal{P}\left(#1\right)}
+
+\newcommand{\Cl}{\text{\bf\tt cl}}
+\newcommand{\Int}{\text{\bf\tt int}}
+\newcommand{\lcm}{\text{\bf\tt lcm}}
+\newcommand{\ord}{\text{\bf\tt ord}}
+\DeclareMathOperator{\comp}{^\text{\tt{c}}}
+\DeclareMathOperator{\measure}{\mathsf{m}}
+
+\newcommand{\Null}{\mathcal{N}}
+\newcommand{\Meager}{\mathcal{M}}
+\newcommand{\Ksigma}{\mathcal{K_\sigma}}
+
+\DeclareMathOperator{\Diff}{\mathsf{Diff}}
+\DeclareMathOperator{\add}{\mathsf{add}}
+\DeclareMathOperator{\non}{\mathsf{non}}
+\DeclareMathOperator{\cov}{\mathsf{cov}}
+\DeclareMathOperator{\cof}{\mathsf{cof}}
+
+\DeclareMathOperator{\cf}{\mathsf{cf}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some cardinals:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The following have some conflict problems, further they can use better names..
+%\DeclareMathOperator{\a}{\mathfrak{a}}
+%\DeclareMathOperator{\b}{\mathfrak{b}}
+%\DeclareMathOperator{\c}{\mathfrak{c}}
+%\DeclareMathOperator{\d}{\mathfrak{d}}
+%\DeclareMathOperator{\m}{\mathfrak{m}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some used classes:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\On}{{\bf \mathrm{On}}}
+\newcommand{\Card}{{\bf \mathrm{Card}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Functions stuffs:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\id}{\texttt{id}}
+
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\ran}{\mathrm{ran}}
+\newcommand{\img}{\mathrm{Im}}
+\newcommand{\restrict}[1]{\upharpoonright_{#1}}
+%\newcommand{\restrict}[1]{{% we make the whole thing an ordinary symbol
+%  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+%  \vphantom{\big|} % pretend it's a little taller at normal size
+%  \right|_{#1} % this is the delimiter
+%  }}
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\bijects}{\tilde{\rightarrow}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Group stuffs:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\aut}{\mathrm{Aut}}
+\newcommand{\sym}{\mathrm{Sym}}
+\newcommand{\alt}{\mathrm{Alt}}		% Known to conflict with beamer.
+\newcommand{\gl}{\mathrm{GL}}
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\newcommand{\bigslantR}[2]{{\raisebox{-.2em}{$#2$} \left\backslash \raisebox{.2em}{$#1$}\right. }}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% My Relations and other stuffs:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bbone}{\mathbbm{1}}
+
+\newcommand{\arrows}{\rightarrow}
+\newcommand{\arrowscl}{\rightarrow_\Cl}
+\newcommand{\forces}{\Vdash}		% Duplicate for readability\
+% \newcommand{\models}{\vDash}
+
+\newcommand{\rhs}{r_{HS} }
+
+\newcommand{\br}{\le_\text{B}}
+\newcommand{\brq}{\leq_\text{B}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% More obscure things:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Some ordering stuffs
+\newcommand{\weaker}{\!\uparrow}
+\newcommand{\stronger}{\!\downarrow}
+
+
+% Some tree stuffs
+\newcommand{\layer}{\mathscr{L}}
+\newcommand{\height}{\texttt{height}}
+
+\def \preSpacing {1cm}
+\def \postSpacing {0.5cm}
+\newcommand{\exerciseFormat}[2] {
+	\vspace{\preSpacing}
+	{\begin{tt}
+	{\bf #1}
+	#2
+	\end{tt}}
+	\vspace{\postSpacing}
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Guard functions for recursive tex:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{currfile}
+\newcommand{\guardNameSurfex}{ GUARD}
+
+\newcommand{\defineGuard}[1]{%
+  \expandafter\def\csname #1\string \guardNameSurfex\endcsname{}
+}
+
+\newcommand{\checkGuard}[1]{%
+  \ifcsname #1\string \guardNameSurfex\endcsname
+    \endinput
+  \fi
+}
+
+\newcommand{\guard}{
+  \checkGuard{\currfilename}
+  \defineGuard{\currfilename}
+}

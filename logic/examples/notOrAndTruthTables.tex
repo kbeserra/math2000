@@ -1,0 +1,23 @@
+\guard
+
+\input{logic/defns/negation.tex}
+\input{logic/defns/disjunction.tex}
+\input{logic/defns/conjunction.tex}
+\input{logic/defns/statementForm.tex}
+\input{logic/defns/truthTable.tex}
+
+\begin{exmp}
+\label{exmp:notOrAndTruthTables}
+Truth tables for logical connectivesL: $\neg$ ( not ), $\vee$ ( or ), and $\wedge$ ( and ).
+  \begin{center}
+    \hfill
+    \hfill
+    \input{ |"python3 logic/scripts/generateTruthTable.py '!p' "}
+    \hfill
+    \input{ |"python3 logic/scripts/generateTruthTable.py 'p | q' "}
+    \hfill
+    \input{|"python3 logic/scripts/generateTruthTable.py 'p & q' "}
+    \hfill
+    \hfill
+  \end{center}
+\end{exmp}

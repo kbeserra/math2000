@@ -1,0 +1,13 @@
+% Compile with: pdflatex --enable-pipes --shell-escape document.tex
+
+\documentclass[12pt]{article}
+
+\usepackage{common}
+
+\begin{document}
+
+% Character count: \input{|"wc document.tex| tr -s ' ' | cut -d' ' -f 4"}
+
+\input{logic/logicalFormsAndEquivalence.tex}
+
+\end{document}
