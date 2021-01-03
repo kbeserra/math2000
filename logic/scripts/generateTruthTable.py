@@ -93,28 +93,37 @@ tex_replacement = { t_NOT.replace('\\',''): r"\neg ",
                     t_AND.replace('\\',''): r"\wedge ",
                     t_IMPLIES.replace('\\',''): "\\ implies " }
 
-def produce_truth_table( s ) :
+def produce_truth_table( S ) :
 
-    vars = sorted( list( set( re.findall( r'[a-z][0-9]*', s ) ) ) )
+
+    vars = sorted( list( set( re.findall( r'[a-z][0-9]*', " ".join( S ) ))))
     n = len( vars )
 
-    s_tex = "".join( s.replace( '|', '+' ).split() )
-    for symb in tex_replacement.keys():
-        s_tex = s_tex.replace( symb, tex_replacement[symb] )
+    S_tex = [  "".join( s.replace( '|', '+' ).split() ) for s in S ]
+    for i in range( len(S_tex) ):
+        for symb in tex_replacement.keys():
+            S_tex[i] = S_tex[i].replace( symb, tex_replacement[symb] )
 
-    print( r"\begin{tabular}{" + "c|"*n + "c}" )
-    print( "\t $" + "$ & $".join( vars ) + "$ & $" + s_tex + r"$ \\" )
+    print( r"\begin{tabular}{" + "c|"*len(vars) + "c|"*(len(S)-1) + "c" + "}" )
+    print( "\t $" + "$ & $".join( vars ) + "$ & $" + "$ & $".join(S_tex) + r"$ \\" )
     print( "\t\\hline")
-    for vals in  product( *(['T', 'F'] for i in range(n)) ):
+    for vals in  product( *(['T', 'F'] for i in range(len(vars))) ):
 
-        evaluation_map = { vars[i]:vals[i] for i in range(n) }
-        row = "\t$"
-        t = s
-        for p in evaluation_map.keys():
-            t = re.sub( r'\b' + p + r'\b' , evaluation_map[p], t )
-            row += evaluation_map[p] + "$ & $"
-        t = t.replace( '|', '+' )
-        row +=  parser.parse(t) + r"$ \\"
+        evaluation_map = { vars[i]:vals[i] for i in range(len(vars)) }
+        row = "\t"
+        for i, p in enumerate(evaluation_map.keys()):
+            row += "$" + evaluation_map[p] + "$"
+            if i+1 < len(vars):
+                row += " & "
+
+        for s in S:
+            row += r" & $"
+            t = s
+            for p in evaluation_map.keys():
+                t = re.sub( r'\b' + p + r'\b' , evaluation_map[p], t )
+            t = t.replace( '|', '+' )
+            row +=  parser.parse(t) + r"$"
+        row += r"\\"
         print(row)
         # print( evaluation_map, t, parser.parse(t) )
     print( r"\end{tabular}" )
@@ -134,5 +143,5 @@ import signal
 
 
 if __name__  == "__main__" :
-    produce_truth_table( sys.argv[1] )
+    produce_truth_table( sys.argv[1:] )
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)

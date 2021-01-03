@@ -1,0 +1,22 @@
+\guard
+
+\input{logic/defns/logicallyEquivalentStatementForm.tex}
+
+\begin{prop}
+\label{prop:doubleNegation}
+  {\bf (Double negation):}
+  The statement form $p$ is logically equivalent to $\neg\neg p$, i.e. $p\equiv \neg\neg p$.
+\end{prop}
+\begin{proof}
+  In the truth table below, we will write $\neg\neg p$ and $\neg(\neg p)$.
+  This is to highlight that we are negating the statement form $\neg p$.
+  \begin{center}
+    \input{ |"python3 logic/scripts/generateTruthTable.py '!p' '!(!p)' "}
+  \end{center}
+  We note that the column for $p$ is identical to the column for $\neg\neg p$.
+  Thus, we can conclude that after substituting a statement for the statement variable $p$ in the statement forms $p$ and $\neg\neg p$ the statement forms will have identical truth values.
+  Whence, the statement forms are identical.
+\end{proof}
+
+The conclusion of the previous definition is certainly a mouthful, but worth repeating.
+Similar to the way statement forms provide a layer of abstraction to statements, examining the truth tables of two statement forms to determine equivalence abstracts away substituting actual statements for statement variables.

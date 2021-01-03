@@ -1,0 +1,36 @@
+\guard
+
+
+\input{logic/defns/statementForm.tex}
+\input{logic/defns/tautology.tex}
+\input{logic/defns/contradiction.tex}
+
+\input{logic/defns/logicallyEquivalentStatementForm.tex}
+
+\input{logic/props/doubleNegation.tex}
+\input{logic/props/deMorgans.tex}
+
+\begin{thm}
+\label{thm:logicalEquivalences}
+  Let $p$, $q$, and $r$ be statement variables, $\tau$ a tautology, and $c$ a contradiction.
+  Then the following hold:
+  \begin{enumerate}
+    \item Commutativity: $p\wedge q\equiv q\wedge p$ and $p\vee q\equiv q\vee p$.
+    \item Associativity: $(p\wedge q)\wedge r \equiv p\wedge(q\wedge r)$ and $(p\vee q)\vee r \equiv p\vee(q\vee r)$.
+    \item Distribution: $p\wedge(q\vee r)\equiv (p\wedge q)\vee(p\wedge r)$ and $p\vee(q\wedge r)\equiv (p\vee q)\wedge(p\vee r)$.
+    \item Identity: $p\wedge \tau\equiv p$ and $p\vee c \equiv p$.
+    \item Negation: $p\wedge\neg p \equiv c$ and $p\vee\neg p \equiv \tau$.
+    \item Double negation: $\neg\neg p \equiv p$.
+    \item Idempotent: $p\wedge p\equiv p$ and $p\vee p \equiv p$.
+    \item Universal bound: $p\vee\tau\equiv\tau$ and $p\wedge c\equiv c $.
+    \item DeMorgan's Law: $\neg(p\wedge q) \equiv \neg p \vee \neg q$ and $\neg(p\vee q) \equiv \neg p \wedge \neg q$/
+    \item Absorption: $p\vee(p\wedge q)\equiv p$ and $p\wedge(p\vee q)\equiv q$.
+    \item Negation of $\tau$ and $c$: $\neg\tau\equiv c$ and $\neg c \equiv \tau$.
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+  Claims (6) and (9) have been proved in Proposition \ref{prop:doubleNegation} and Proposition \ref{prop:DeMorgans} respectively.
+  The remaining claims are left as an exercise to the reader.
+\end{proof}
+
+\input{logic/exercises/logicalEquivalences.tex}

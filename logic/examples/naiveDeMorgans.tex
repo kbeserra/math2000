@@ -1,0 +1,13 @@
+\guard
+
+\input{logic/defns/logicallyEquivalentStatementForm.tex}
+\input{logic/defns/truthTable.tex}
+
+\begin{exmp}
+  The statement form $\neg(p\wedge q)$ is not equivalent to the statement form $\neg p \wedge \neg q$ ($\neg(p\wedge q) \not\equiv \neg p \wedge \neg q$).
+  \begin{center}
+    \input{ |"python3 logic/scripts/generateTruthTable.py '!(p&q)' '!p&!q' "}
+  \end{center}
+  Note the middle two rows of the $\neg(p\wedge q)$ and the $\neg p\wedge\neg q$ do not have the same values.
+  These rows are counterexamples to the two statement forms being logically equivalent.
+\end{exmp}
