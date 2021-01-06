@@ -91,7 +91,7 @@ from itertools import product
 tex_replacement = { t_NOT.replace('\\',''): r"\neg ",
                     t_OR.replace('\\','') : r"\vee ",
                     t_AND.replace('\\',''): r"\wedge ",
-                    t_IMPLIES.replace('\\',''): "\\ implies " }
+                    t_IMPLIES.replace('\\',''): r"\rightarrow " }
 
 def produce_truth_table( S ) :
 

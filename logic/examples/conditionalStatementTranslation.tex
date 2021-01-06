@@ -1,0 +1,22 @@
+\guard
+
+\input{logic/defns/conditional.tex}
+\input{logic/props/conditionalEquivalent.tex}
+
+\begin{exmp}
+\label{exmp:conditionalStatementTranslation}
+  Rewrite the following as an if-then statement (in English):
+  \begin{center}
+    Either you get your work in on time or you're fired.
+  \end{center}
+
+  Let $\neg p$ be the statement ``you get your work in on time''.
+  This means that $p$ is equivalent to the statenemnt `` you do not get your work in on time''
+  Let $q$ the statement ``you are fired''.
+  Then the original statement can be written as $\neg p\vee q$.
+  Using Proposition \ref{prop:conditionEquivalence}, we have that $\neg p\vee q \equiv p\rightarrow q$.
+  Rewriting this in English we get:
+  \begin{center}
+    If you do not get your work in on time, then you are fired.
+  \end{center}
+\end{exmp}

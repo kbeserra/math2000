@@ -7,11 +7,12 @@
 \input{logic/defns/truthTable.tex}
 
 \begin{exmp}
-Truth table for the statement form $(p\vee q ) \wedge \neg( p \wedge q )$ : \\
-Note, in this example we also include the truth table for the substatements forming the larger statement.
-This is not necessary, though this does reduce the risk for error at the cost of space and ink.
-  \begin{center}
-    % \input{ |"python3 logic/scripts/generateTruthTable.py '(p|q) & !(p&q)'"}
-    \input{ |"python3 logic/scripts/generateTruthTable.py 'p|q' 'p&q' '!(p&q)' '(p|q) & !(p&q)'"}
-  \end{center}
+\label{exmp:notOrAndTruthTablesCombinations}
+  Truth table for the statement form $(p\vee q ) \wedge \neg( p \wedge q )$ : \\
+  Note, in this example we also include the truth table for the substatements forming the larger statement.
+  This is not necessary, though this does reduce the risk for error at the cost of space and ink.
+    \begin{center}
+      % \input{ |"python3 logic/scripts/generateTruthTable.py '(p|q) & !(p&q)'"}
+      \input{ |"python3 logic/scripts/generateTruthTable.py 'p|q' 'p&q' '!(p&q)' '(p|q) & !(p&q)'"}
+    \end{center}
 \end{exmp}
