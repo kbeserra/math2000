@@ -24,5 +24,9 @@ For instances, a definition for an even integer should never `\input` an *atom* 
 
 ### Compile Instructions
 Compile with
-  pdflatex --enable-pipes --shell-escape document.tex && makeindex document && pdflatex --enable-pipes --shell-escape document.tex
+
+        pdflatex --enable-pipes --shell-escape document.tex && 
+        makeindex document && 
+        pdflatex --enable-pipes --shell-escape document.tex
+
 I'll make a *makefile* soon.
