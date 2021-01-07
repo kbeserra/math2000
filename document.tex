@@ -3,13 +3,39 @@
 \documentclass[12pt]{article}
 
 \usepackage{common}
+\usepackage{makeidx}
+
+\title{Math 2000 Notes}
+\author{Kyle Beserra}
+
+\makeindex
 
 \begin{document}
 
+  \maketitle
+
+% Frontmatter
+  \pagenumbering{roman}
+  \newpage
+
+  \tableofcontents
+  \newpage
+
+% Mainmatter
+  \pagenumbering{arabic}
+  \input{common/notation/sets.tex}
+  \newpage
+
   \input{logic/logicalFormsAndEquivalence.tex}
   \newpage
+
   \input{logic/conditionalStatements.tex}
   \newpage
+
   \input{logic/predicatesAndQuantifiers.tex}
+  \newpage
+
+% Backmatter
+  \printindex
 
 \end{document}
