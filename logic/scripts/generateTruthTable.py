@@ -8,6 +8,7 @@ tokens = ( 'VAL',
            'OR',
            'AND',
            'IMPLIES',
+           'IFF',
            'LPAREN',
            'RPAREN',
         )
@@ -18,6 +19,7 @@ t_NOT       = r'!'
 t_OR        = r'\+'
 t_AND       = r'&'
 t_IMPLIES   = r'->'
+t_IFF       = r'<->'
 t_LPAREN    = r'\('
 t_RPAREN    = r'\)'
 
@@ -38,7 +40,7 @@ def t_error(t):
 lexer = lex.lex()
 
 precedence = (
-    ('left','AND','OR','IMPLIES'),
+    ('left','AND','OR','IMPLIES', 'IFF' ),
     ('right','UNOT')
     )
 
@@ -71,6 +73,12 @@ def p_expression_IMPLIES(p):
     b = p[3] == 'T'
     p[0] = conv[ ( not a ) or b ]
 
+def p_expression_IFF(p):
+    'expression : expression IFF expression'
+    a = p[1] == 'T'
+    b = p[3] == 'T'
+    p[0] = conv[ (( not a ) or b) and (( not b) or a) ]
+
 
 def p_factor_expr(p):
     'expression : LPAREN expression RPAREN'
@@ -88,10 +96,11 @@ parser = yacc.yacc()
 import re
 from itertools import product
 
-tex_replacement = { t_NOT.replace('\\',''): r"\neg ",
-                    t_OR.replace('\\','') : r"\vee ",
-                    t_AND.replace('\\',''): r"\wedge ",
-                    t_IMPLIES.replace('\\',''): r"\rightarrow " }
+tex_replacement = { t_NOT: r"\\neg ",
+                    t_OR : r"\\vee ",
+                    t_AND: r"\\wedge ",
+                    r"(?<!<)"+t_IMPLIES: r"\\rightarrow ",
+                    t_IFF: r"\\leftrightarrow " }
 
 def produce_truth_table( S ) :
 
@@ -102,7 +111,8 @@ def produce_truth_table( S ) :
     S_tex = [  "".join( s.replace( '|', '+' ).split() ) for s in S ]
     for i in range( len(S_tex) ):
         for symb in tex_replacement.keys():
-            S_tex[i] = S_tex[i].replace( symb, tex_replacement[symb] )
+            S_tex[i] = re.sub(symb, tex_replacement[symb], S_tex[i] )
+
 
     print( r"\begin{tabular}{" + "c|"*len(vars) + "c|"*(len(S)-1) + "c" + "}" )
     print( "\t $" + "$ & $".join( vars ) + "$ & $" + "$ & $".join(S_tex) + r"$ \\" )

@@ -8,22 +8,24 @@ Rule 2     expression -> NOT expression
 Rule 3     expression -> expression OR expression
 Rule 4     expression -> expression AND expression
 Rule 5     expression -> expression IMPLIES expression
-Rule 6     expression -> LPAREN expression RPAREN
+Rule 6     expression -> expression IFF expression
+Rule 7     expression -> LPAREN expression RPAREN
 
 Terminals, with rules where they appear
 
 AND                  : 4
+IFF                  : 6
 IMPLIES              : 5
-LPAREN               : 6
+LPAREN               : 7
 NOT                  : 2
 OR                   : 3
-RPAREN               : 6
+RPAREN               : 7
 VAL                  : 1
 error                : 
 
 Nonterminals, with rules where they appear
 
-expression           : 2 3 3 4 4 5 5 6 0
+expression           : 2 3 3 4 4 5 5 6 6 7 0
 
 Parsing method: LALR
 
@@ -35,7 +37,8 @@ state 0
     (3) expression -> . expression OR expression
     (4) expression -> . expression AND expression
     (5) expression -> . expression IMPLIES expression
-    (6) expression -> . LPAREN expression RPAREN
+    (6) expression -> . expression IFF expression
+    (7) expression -> . LPAREN expression RPAREN
 
     VAL             shift and go to state 2
     NOT             shift and go to state 3
@@ -49,10 +52,12 @@ state 1
     (3) expression -> expression . OR expression
     (4) expression -> expression . AND expression
     (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . IFF expression
 
     OR              shift and go to state 5
     AND             shift and go to state 6
     IMPLIES         shift and go to state 7
+    IFF             shift and go to state 8
 
 
 state 2
@@ -62,6 +67,7 @@ state 2
     OR              reduce using rule 1 (expression -> VAL .)
     AND             reduce using rule 1 (expression -> VAL .)
     IMPLIES         reduce using rule 1 (expression -> VAL .)
+    IFF             reduce using rule 1 (expression -> VAL .)
     $end            reduce using rule 1 (expression -> VAL .)
     RPAREN          reduce using rule 1 (expression -> VAL .)
 
@@ -74,29 +80,31 @@ state 3
     (3) expression -> . expression OR expression
     (4) expression -> . expression AND expression
     (5) expression -> . expression IMPLIES expression
-    (6) expression -> . LPAREN expression RPAREN
-
-    VAL             shift and go to state 2
-    NOT             shift and go to state 3
-    LPAREN          shift and go to state 4
-
-    expression                     shift and go to state 8
-
-state 4
-
-    (6) expression -> LPAREN . expression RPAREN
-    (1) expression -> . VAL
-    (2) expression -> . NOT expression
-    (3) expression -> . expression OR expression
-    (4) expression -> . expression AND expression
-    (5) expression -> . expression IMPLIES expression
-    (6) expression -> . LPAREN expression RPAREN
+    (6) expression -> . expression IFF expression
+    (7) expression -> . LPAREN expression RPAREN
 
     VAL             shift and go to state 2
     NOT             shift and go to state 3
     LPAREN          shift and go to state 4
 
     expression                     shift and go to state 9
+
+state 4
+
+    (7) expression -> LPAREN . expression RPAREN
+    (1) expression -> . VAL
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression IFF expression
+    (7) expression -> . LPAREN expression RPAREN
+
+    VAL             shift and go to state 2
+    NOT             shift and go to state 3
+    LPAREN          shift and go to state 4
+
+    expression                     shift and go to state 10
 
 state 5
 
@@ -106,13 +114,14 @@ state 5
     (3) expression -> . expression OR expression
     (4) expression -> . expression AND expression
     (5) expression -> . expression IMPLIES expression
-    (6) expression -> . LPAREN expression RPAREN
+    (6) expression -> . expression IFF expression
+    (7) expression -> . LPAREN expression RPAREN
 
     VAL             shift and go to state 2
     NOT             shift and go to state 3
     LPAREN          shift and go to state 4
 
-    expression                     shift and go to state 10
+    expression                     shift and go to state 11
 
 state 6
 
@@ -122,13 +131,14 @@ state 6
     (3) expression -> . expression OR expression
     (4) expression -> . expression AND expression
     (5) expression -> . expression IMPLIES expression
-    (6) expression -> . LPAREN expression RPAREN
+    (6) expression -> . expression IFF expression
+    (7) expression -> . LPAREN expression RPAREN
 
     VAL             shift and go to state 2
     NOT             shift and go to state 3
     LPAREN          shift and go to state 4
 
-    expression                     shift and go to state 11
+    expression                     shift and go to state 12
 
 state 7
 
@@ -138,106 +148,160 @@ state 7
     (3) expression -> . expression OR expression
     (4) expression -> . expression AND expression
     (5) expression -> . expression IMPLIES expression
-    (6) expression -> . LPAREN expression RPAREN
+    (6) expression -> . expression IFF expression
+    (7) expression -> . LPAREN expression RPAREN
 
     VAL             shift and go to state 2
     NOT             shift and go to state 3
     LPAREN          shift and go to state 4
 
-    expression                     shift and go to state 12
+    expression                     shift and go to state 13
 
 state 8
+
+    (6) expression -> expression IFF . expression
+    (1) expression -> . VAL
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression IFF expression
+    (7) expression -> . LPAREN expression RPAREN
+
+    VAL             shift and go to state 2
+    NOT             shift and go to state 3
+    LPAREN          shift and go to state 4
+
+    expression                     shift and go to state 14
+
+state 9
 
     (2) expression -> NOT expression .
     (3) expression -> expression . OR expression
     (4) expression -> expression . AND expression
     (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . IFF expression
 
     OR              reduce using rule 2 (expression -> NOT expression .)
     AND             reduce using rule 2 (expression -> NOT expression .)
     IMPLIES         reduce using rule 2 (expression -> NOT expression .)
+    IFF             reduce using rule 2 (expression -> NOT expression .)
     $end            reduce using rule 2 (expression -> NOT expression .)
     RPAREN          reduce using rule 2 (expression -> NOT expression .)
 
   ! OR              [ shift and go to state 5 ]
   ! AND             [ shift and go to state 6 ]
   ! IMPLIES         [ shift and go to state 7 ]
-
-
-state 9
-
-    (6) expression -> LPAREN expression . RPAREN
-    (3) expression -> expression . OR expression
-    (4) expression -> expression . AND expression
-    (5) expression -> expression . IMPLIES expression
-
-    RPAREN          shift and go to state 13
-    OR              shift and go to state 5
-    AND             shift and go to state 6
-    IMPLIES         shift and go to state 7
+  ! IFF             [ shift and go to state 8 ]
 
 
 state 10
+
+    (7) expression -> LPAREN expression . RPAREN
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . IFF expression
+
+    RPAREN          shift and go to state 15
+    OR              shift and go to state 5
+    AND             shift and go to state 6
+    IMPLIES         shift and go to state 7
+    IFF             shift and go to state 8
+
+
+state 11
 
     (3) expression -> expression OR expression .
     (3) expression -> expression . OR expression
     (4) expression -> expression . AND expression
     (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . IFF expression
 
     OR              reduce using rule 3 (expression -> expression OR expression .)
     AND             reduce using rule 3 (expression -> expression OR expression .)
     IMPLIES         reduce using rule 3 (expression -> expression OR expression .)
+    IFF             reduce using rule 3 (expression -> expression OR expression .)
     $end            reduce using rule 3 (expression -> expression OR expression .)
     RPAREN          reduce using rule 3 (expression -> expression OR expression .)
 
   ! OR              [ shift and go to state 5 ]
   ! AND             [ shift and go to state 6 ]
   ! IMPLIES         [ shift and go to state 7 ]
+  ! IFF             [ shift and go to state 8 ]
 
 
-state 11
+state 12
 
     (4) expression -> expression AND expression .
     (3) expression -> expression . OR expression
     (4) expression -> expression . AND expression
     (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . IFF expression
 
     OR              reduce using rule 4 (expression -> expression AND expression .)
     AND             reduce using rule 4 (expression -> expression AND expression .)
     IMPLIES         reduce using rule 4 (expression -> expression AND expression .)
+    IFF             reduce using rule 4 (expression -> expression AND expression .)
     $end            reduce using rule 4 (expression -> expression AND expression .)
     RPAREN          reduce using rule 4 (expression -> expression AND expression .)
 
   ! OR              [ shift and go to state 5 ]
   ! AND             [ shift and go to state 6 ]
   ! IMPLIES         [ shift and go to state 7 ]
+  ! IFF             [ shift and go to state 8 ]
 
 
-state 12
+state 13
 
     (5) expression -> expression IMPLIES expression .
     (3) expression -> expression . OR expression
     (4) expression -> expression . AND expression
     (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . IFF expression
 
     OR              reduce using rule 5 (expression -> expression IMPLIES expression .)
     AND             reduce using rule 5 (expression -> expression IMPLIES expression .)
     IMPLIES         reduce using rule 5 (expression -> expression IMPLIES expression .)
+    IFF             reduce using rule 5 (expression -> expression IMPLIES expression .)
     $end            reduce using rule 5 (expression -> expression IMPLIES expression .)
     RPAREN          reduce using rule 5 (expression -> expression IMPLIES expression .)
 
   ! OR              [ shift and go to state 5 ]
   ! AND             [ shift and go to state 6 ]
   ! IMPLIES         [ shift and go to state 7 ]
+  ! IFF             [ shift and go to state 8 ]
 
 
-state 13
+state 14
 
-    (6) expression -> LPAREN expression RPAREN .
+    (6) expression -> expression IFF expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . IFF expression
 
-    OR              reduce using rule 6 (expression -> LPAREN expression RPAREN .)
-    AND             reduce using rule 6 (expression -> LPAREN expression RPAREN .)
-    IMPLIES         reduce using rule 6 (expression -> LPAREN expression RPAREN .)
-    $end            reduce using rule 6 (expression -> LPAREN expression RPAREN .)
-    RPAREN          reduce using rule 6 (expression -> LPAREN expression RPAREN .)
+    OR              reduce using rule 6 (expression -> expression IFF expression .)
+    AND             reduce using rule 6 (expression -> expression IFF expression .)
+    IMPLIES         reduce using rule 6 (expression -> expression IFF expression .)
+    IFF             reduce using rule 6 (expression -> expression IFF expression .)
+    $end            reduce using rule 6 (expression -> expression IFF expression .)
+    RPAREN          reduce using rule 6 (expression -> expression IFF expression .)
+
+  ! OR              [ shift and go to state 5 ]
+  ! AND             [ shift and go to state 6 ]
+  ! IMPLIES         [ shift and go to state 7 ]
+  ! IFF             [ shift and go to state 8 ]
+
+
+state 15
+
+    (7) expression -> LPAREN expression RPAREN .
+
+    OR              reduce using rule 7 (expression -> LPAREN expression RPAREN .)
+    AND             reduce using rule 7 (expression -> LPAREN expression RPAREN .)
+    IMPLIES         reduce using rule 7 (expression -> LPAREN expression RPAREN .)
+    IFF             reduce using rule 7 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 7 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 7 (expression -> LPAREN expression RPAREN .)
 
