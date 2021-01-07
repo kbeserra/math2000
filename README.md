@@ -1,7 +1,6 @@
-# MATH 2000
-## Lecture Notes
+# MATH 2000 Lecture Notes
 
-### Description:
+### Description
 This repository contains my lecture notes teaching the introduction to mathematics and proof writing class at the University of North Texas, Math 2000.
 This project also acts as an at-scale example of a practice of document preparation I am calling recursive LaTeX.  
 
