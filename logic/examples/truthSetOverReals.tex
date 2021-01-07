@@ -1,0 +1,20 @@
+\guard
+
+\input{logic/examples/predicateOverReals.tex}
+\input{logic/defns/truthSet.tex}
+
+\begin{exmp}
+\label{exmp:truthSetOverReals}
+  Let $P(x)$ be as in Example \ref{exmp:predicateOverReals}.
+  It is not difficult to see that for any real number $x$ with $x<0$, that ${x^2>0>x}$.
+  So, for any real number $x$ with $x<0$ $P(x)$ holds.
+
+  Now, if $x$ is a real number with ${0\leq x\leq 1}$, then we can see that ${0\leq x^2\leq x\leq 1}$.
+  So, if $x$ is a real number with ${0\leq x\leq 1}$, then $P(x)$ is false.
+
+  Finally, if $x$ is a real number with ${1 < x}$, then we have that ${x < x^2}$.
+  Thus, if $x$ is a real number with $1<x$, then $P(x)$ is true.
+
+  Puting this together, we have that the truth set of $P(x)$ are the real numbers $x$ such that $(x<0)\vee(1<x)$.
+  % That is, \[ \set{x\in\RR \mid P(x) } = (\infty,0)\cup(1,\infty)\,.\]
+\end{exmp}
