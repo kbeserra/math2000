@@ -19,4 +19,4 @@ Further, an even integer might, depending on the level of pedantry of the docume
 
 *Atoms* should never include unnecessary `\inputs`.
 
-For instances, a definition for an even integer should never `\input` an *atom* which makes use of the definition of a real number, as that is certainly outside the minimal scope of an even integer.
+For instances, a definition for an even integer should never `\input` an *atom* which makes use of the definition of a real number, as that is certainly outside the minimal scope of an even integer. 
