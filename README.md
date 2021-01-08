@@ -1,10 +1,12 @@
 # MATH 2000 Lecture Notes
 
+- [Notes](https://github.com/kbeserra/math2000/blob/main/document.pdf)
+
 ### Description
 This repository contains my lecture notes teaching the introduction to mathematics and proof writing class at the University of North Texas, Math 2000.
-This project also acts as an at-scale example of a practice of document preparation I am calling recursive LaTeX.  
+This project also acts as an at-scale example of a practice of document preparation I am working on.
 
-### Recursive LaTeX
+### Include Guard In LaTeX
 If you explore this project you will notice that the content of this document is in many files.
 Each file Tex file in this project, with exception of the top-most document.tex file, starts with the command `\guard`.
 The `\guard` command acts as just as a [#include guard](https://en.wikipedia.org/wiki/Include_guard) in the C programming language.
