@@ -15,7 +15,7 @@ Placing `\guard` at the top of a file allows that file to be `\input`-ed many ti
 The intention of the `\guard` command is to allow the content of a document to be fragmented *atoms*, where an atom is a file starting with the `\guard` command containing a single idea.
 Each of these *atoms* are responsible to `\input` the minimum *atoms* necessary to make sense of the idea being presented.
 
-For instances, a definition for an even integer aught to include an `\input` for the definition of an integer.
+For instances, a definition for an even integer ought to include an `\input` for the definition of an integer.
 Further, an even integer might, depending on the level of pedantry of the document, also `\input` a definition for the integer 2, as well as the definition for the integer multiplication.
 
 *Atoms* should never include unnecessary `\input`s.
