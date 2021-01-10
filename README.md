@@ -18,7 +18,7 @@ Each of these *atoms* are responsible to `\input` the minimum *atoms* necessary 
 For instances, a definition for an even integer aught to include an `\input` for the definition of an integer.
 Further, an even integer might, depending on the level of pedantry of the document, also `\input` a definition for the integer 2, as well as the definition for the integer multiplication.
 
-*Atoms* should never include unnecessary `\inputs`.
+*Atoms* should never include unnecessary `\input`s.
 
 For instances, a definition for an even integer should never `\input` an *atom* which makes use of the definition of a real number, as that is certainly outside the minimal scope of an even integer.
 
