@@ -32,3 +32,38 @@ That is, the concluding sentence of Example \ref{exmp:predicates} could be writt
 \input{logic/examples/truthSetOverReals.tex}
 
 \input{logic/examples/truthSetOverIntegers.tex}
+
+
+\input{logic/examples/univeralStatementOverFiniteSet.tex}
+
+\index{method of exhaustion}
+Note that the technique of checking each element of the domain of an universal statement, as in the example above, is not the way to go.
+This method is called the \emph{method of exhaustion}, and is aptly named.
+
+\input{logic/examples/univeralStatementOverRealsFalse.tex}
+The technique of producing a counter example is the standard way to show that  an universal statement is false.
+
+
+\input{logic/examples/existentialStatementOverFiniteSetFalse.tex}
+\input{logic/examples/existentialStatementOverReals.tex}
+
+\input{ logic/examples/translateQuantifiedStatementsFromEnglish.tex }
+
+\input{logic/examples/translateQuantifiedConditionalStatements.tex}
+
+Note that the statements
+\begin{center}
+	`` For all real numbers $x$ if $x$ is an integer, then $x$ is a rational.''
+\end{center}
+and
+\begin{center}
+	`` For all integers $x$, $x$ is a rational.''
+\end{center}
+are equivalent.
+
+In fact, \[\forall x\in D(P(x)\rightarrow Q(x) )\equiv \forall x\in {y\in D\mid P(x)}( Q(x) )\]
+
+
+Let $P(x)$ and $Q(x)$ be predicates with $D$ the common domain of $x$.
+We write $P(x)\implies Q(x)$ to mean $\forall x\in D( P(x)\rightarrow Q(x))$ when there is no risk for confusion of the domain $D$.
+Similarly, we write $P(x)\iff Q(x)$ to mean $\forall x\in D( P(x)\leftrightarrow Q(x))$

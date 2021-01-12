@@ -1,0 +1,26 @@
+\guard
+
+\input{logic/defns/universalStatement.tex}
+
+\begin{exmp}
+\label{exmp:univeralStatementOverFiniteSet}
+  Let $D=\set{ 1,2,3,4,5 }$.
+	Show that $\forall x\in D(x \leq x^2)$ is true.
+
+	As $D$ is a finite set, and a small one at that, we can check this by brutal force.
+	That is, check that $P(x)$ holds for each element in $D$:
+	\begin{itemize}
+		\item $x=1$,
+			So, $x=1 \leq 1 = x^2$.
+		\item $x=2$,
+			So, $x=2 \leq 4 = x^2$.
+		\item $x=3$,
+			So, $x=3 \leq 9 = x^2$.
+		\item $x=4$,
+			So, $x=4 \leq 16 = x^2$.
+		\item $x=5$,
+			So, $x=5 \leq 25 = x^2$.
+	\end{itemize}
+	As we have, exhaustively, shown that $x \geq x^2$ holds for each $x\in D$.
+	Thus,  $\forall x\in D(x \geq x^2)$ is true.
+\end{exmp}

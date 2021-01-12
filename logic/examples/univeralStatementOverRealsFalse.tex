@@ -1,0 +1,14 @@
+\guard
+
+\input{logic/defns/universalStatement.tex}
+
+\begin{exmp}
+\label{exmp:univeralStatementOverRealsFalse}
+	Show that $\forall x\in \RR(x \leq x^2)$ is false.
+
+	To do this, we need to recall that $\forall x\in \RR(x \leq x^2)$ is true, by Definition \ref{defn:universalStatement}, precisely when $x\leq x^2$ for all $x\in \RR$.
+	So, to show it is false we need only show that $x \leq x^2$ is false for some $x\in\RR$.
+	That is, we need to provide a counter example to the claim.
+
+	For a counter example, consider $x=\frac{1}{2}$ and note that \[ x=\frac{1}{4}\not\leq \frac{1}{16} = (\frac{1}{4})^2\,.\]
+\end{exmp}
