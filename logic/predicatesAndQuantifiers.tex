@@ -47,7 +47,7 @@ The technique of producing a counter example is the standard way to show that  a
 \input{logic/examples/existentialStatementOverFiniteSetFalse.tex}
 \input{logic/examples/existentialStatementOverReals.tex}
 
-\input{ logic/examples/translateQuantifiedStatementsFromEnglish.tex }
+\input{logic/examples/translateQuantifiedStatementsFromEnglish.tex}
 
 \input{logic/examples/translateQuantifiedConditionalStatements.tex}
 
@@ -67,3 +67,34 @@ In fact, \[\forall x\in D(P(x)\rightarrow Q(x) )\equiv \forall x\in \set{y\in D\
 Let $P(x)$ and $Q(x)$ be predicates with $D$ the common domain of $x$.
 We write $P(x)\implies Q(x)$ to mean $\forall x\in D( P(x)\rightarrow Q(x))$ when there is no risk for confusion of the domain $D$.
 Similarly, we write $P(x)\iff Q(x)$ to mean $\forall x\in D( P(x)\leftrightarrow Q(x))$
+
+\input{logic/exercises/negationOfExistentialStatement.tex}
+\input{logic/examples/negateQuantifiedStatement.tex}
+
+\input{logic/exercises/negationOfUniversalConditionalStatement.tex}
+\input{logic/examples/negationOfUniversalConditionalStatement.tex}
+
+Recall that we say that a conditional statement, $p\rightarrow q$ is vacuously true provided $p$ is false.
+In the same way, we say that a statement of the form $\forall x\in D(P(x)\rightarrow Q(x))$ is vacuously true if $\forall x\in D$ $P(x)$ is true.
+Further, we define the converse, inverse, and contrapositive fir quantified conditional statements similar to how we defined them for conditional statements $p\rightarrow q$.
+That is, for a statement of the form $P(x)\implies Q(x)$:
+\begin{itemize}
+  \item its converse is $Q(x)\implies P(x)$,
+  \item its inverse is $\neg P(x) \implies \neg Q(x)$, and
+  \item its contrapositive is $\neg Q(x) \implies \neg P(x)$.
+\end{itemize}
+
+\begin{exercise}
+  Show that $P(x)\implies Q(x)$ is logically equivalent to $\neg Q(x)\implies \neg P(x)$.
+\end{exercise}
+
+\begin{exercise}
+  Show that $P(x)\implies Q(x)$ is not logically equivalent to $Q(x)\implies P(x)$ and $\neg P(x)\implies \neg Q(x)$.
+\end{exercise}
+
+Similar to Definition \ref{logic/defns/sufficentAndNecessary.tex}
+\begin{itemize}
+  \item ``For all $x$, $R(x)$ is a sufficient condition for $S(x)$'' means $R(x)\implies S(x)$.
+  \item ``For all $x$, $R(x)$ is a necessary condition for $S(x)$'' means $\neg R(x)\implies \neg Q(x)$.
+  \item ``For all $x$, $R(x)$ only if $S(x)$'' means $\neg S(x)\implies \neg R(x)$.
+\end{itemize}

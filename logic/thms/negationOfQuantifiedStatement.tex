@@ -1,0 +1,23 @@
+\guard
+
+\input{logic/defns/negation.tex}
+\input{logic/defns/universalStatement.tex}
+
+\begin{thm}
+\label{thm:negationOfQuantifiedStatement}
+  Let $P(x)$ be a predicate with $D$ as the domain of $x$ in $P$.
+  Then the statement $\neg\left(\forall x\in D(P(x))\right)$ is logically equivalent to $\exists x \in D( \neg P(x) )$.
+\end{thm}
+\begin{proof}
+  Recall, from Definition \ref{defn:universalStatement}, $\forall x\in D(P(x))$ is true if, and only if, $P(x)$ is true for every $x$ in $D$.
+  Thus, $\neg\left(\forall x\in D(P(x))\right)$ is true if, and only if, there is some $x$ in $D$ such that $P(x)$ is not true.
+  Though, that is true if, and only if, for some $x$ in $D$ $\neg P(x)$ is true.
+  Thus, $\neg\left(\forall x\in D(P(x))\right)$ holds if, and only if, $\exists x\in D(\neg P(x))$.
+\end{proof}
+
+\begin{cor}
+  A statement of the form $\neg\left(\exists x\in D(P(x))\right)$ is logically equivalent to $\forall x\in D (\neg P(x))$.
+\end{cor}
+\begin{proof}
+  Left and as an exercise to the reader.
+\end{proof}

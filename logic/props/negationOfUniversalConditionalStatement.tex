@@ -1,0 +1,14 @@
+\guard
+
+\input{logic/defns/negation.tex}
+\input{logic/defns/conditional.tex}
+\input{logic/defns/universalStatement.tex}
+
+\begin{prop}
+\label{prop:negationOfUniversalConditionalStatement}
+  Let $P(x)$ and $Q(x)$ be predicate statements with $D$ the common domain of $x$ in $P$ and $Q$.
+  Then$\neg\left(\forall x\in D(P(x)\rightarrow Q(x))\right)$ is logically equivalent to $\exists x\in D(P(x) \wedge \neg Q(x) )$.
+\end{prop}
+\begin{proof}
+  Left as an exercise to the reader.
+\end{proof}
