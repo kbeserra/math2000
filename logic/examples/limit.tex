@@ -1,0 +1,11 @@
+\guard
+
+\input{logic/defns/universalStatement.tex}
+\input{logic/defns/extistentialStatement.tex}
+
+\begin{exmp}
+\label{exmp:limit}
+  The definition of a limit, from calculus, uses both $\forall$ and $\exists$ as well as an if-then statement.
+  We say the limit of a sequence $a_n$ as $n\to\infty$ is $L$, written $\lim_{n\to} a_n = L$, if, and only if, for any fixed tolerance there exists a point in the sequence where the values $a_n$ are within that tolerance to $L$.
+  That is, $\lim_{n\to\infty}a_n=L$ if, and only if, \[\forall\epsilon\in\RR(\epsilon>0\rightarrow\exists N\in\NN\forall n\in\NN(N<n\rightarrow\vert a_n-L\vert < \epsilon))\,.\]
+\end{exmp}

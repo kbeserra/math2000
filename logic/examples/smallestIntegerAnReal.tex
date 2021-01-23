@@ -1,0 +1,16 @@
+\guard
+
+\input{logic/defns/universalStatement.tex}
+\input{logic/defns/extistentialStatement.tex}
+
+\begin{exmp}
+\label{exmp:smallestIntegerAnReal}
+  Write the following formally using quantifiers and variables:
+  \begin{itemize}
+    \item There is a smallest positive integer.\\
+      \[ \exists a\in\ZZ(a>0\wedge\forall b\in\ZZ(b>0\rightarrow a\leq b))\,.\]
+    \item There does not exist a smallest positive real number.\\
+      \[ \forall a\in\RR( a>0\rightarrow\exists b(b>0\wedge b<a))\,.\]
+  \end{itemize}
+
+\end{exmp}

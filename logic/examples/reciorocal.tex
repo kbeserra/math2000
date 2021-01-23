@@ -1,0 +1,17 @@
+\guard
+
+\input{logic/defns/universalStatement.tex}
+\input{logic/defns/extistentialStatement.tex}
+
+\begin{exmp}
+\label{exmp:reciprocal}
+  The \emph{reciprocal} of a real number,$a$, is a real number, $b$, such that $ab=1$.
+
+  Write the following formally using quantifiers and variables:
+  \begin{itemize}
+    \item Every non-zero real number has a reciprocal.\\
+      \[ \forall a\in\RR( a\not=0\rightarrow\exists b\in\RR(ab=1))\,.\]
+    \item There is a real number with no reciprocal:
+      \[\exists a\in\RR\forall b\in\RR(ab\not=1)\,.\]
+  \end{itemize}
+\end{exmp}
