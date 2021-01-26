@@ -1,0 +1,25 @@
+\guard
+
+
+\input{numberTheory/defns/even.tex}
+\input{numberTheory/defns/odd.tex}
+
+%TODO Show that $\ZZ$ is closed under $+$ and $*$.
+The following exercise is incomplete, it requires the fact that $\ZZ$ is closed under $+$ and $*$.
+Currently, that fact is asserted without proof.
+
+\begin{exmp}
+\label{exmp:evenOdd}
+  Use the definitions for even and odd, Definitions \ref{defn:even} and \ref{defn:odd}, to justify that:
+  \begin{enumerate}
+    \item $0$ is even.\\
+      Note that $0\in\ZZ$ and $0 = 2(0)$, thus by Definition \ref{defn:even} $0$ is even.
+    \item $-301$ is odd.\\
+      Note that $-151\in\ZZ$ and $-301=2(-151) + 1$, thus by Definition \ref{defn:odd} $-301$ is odd.
+    \item if $a,b\in\ZZ$, then $6a^2b$ is even.\\
+      Fix $a,b\in\ZZ$.
+      Note that as $\ZZ$ is closed under $*$ and $3\in\ZZ$, $3*a^2b=3aab\in\ZZ$.
+      Similarly, as $6\in\ZZ$ $6a^2b\in\ZZ$
+      Thus, by Definition \ref{defn:even} $6a^2b=2(3a^2b)$ is even.
+  \end{enumerate}
+\end{exmp}

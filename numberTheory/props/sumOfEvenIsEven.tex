@@ -1,0 +1,19 @@
+\guard
+
+\input{numberTheory/defns/even.tex}
+
+\begin{prop}
+\label{prop:sumOfEvenIsEven}
+  Show taht the sum of two even integers is even.
+\end{prop}
+\begin{proof}
+  Let $a$ and $b$ be arbitrary even integers.
+  As $a$ and $b$ are even there exists $k,l\in\ZZ$ such that $a=2k$ and $b=2l$.
+  Then, we note that
+  \begin{align*}
+    a + b &= 2k + 2l \\
+          &= 2( k + l )\,.
+  \end{align*}
+  Though, as $k,l\in\ZZ$, $k+l\in\ZZ$, set $m=k+l$.
+  Then we note that $m\in\ZZ$ and $a+b = 2m$, and whence $a+b$ is even.
+\end{proof}

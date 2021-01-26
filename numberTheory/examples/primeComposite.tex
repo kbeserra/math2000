@@ -1,0 +1,36 @@
+\guard
+
+
+%TODO Show that $\ZZ$ is closed under $+$ and $*$.
+
+\input{numberTheory/defns/prime.tex}
+\input{numberTheory/defns/composite.tex}
+
+%TODO Show that
+This example is incomplete.
+It requires proof that $\forall a,b\in\ZZ^+$ $a,b\leq ab$.
+That is, multiplication on $\ZZ^+$ is not decreasing.
+
+\begin{exmp}
+\label{exmp:primeComposite}
+  \begin{enumerate}
+    \item Show that $1$ is not prime.\\
+      Note, Definition \ref{defn:prime} of prime requires that a prime integer be greater than $1$.
+      $1\not<1$, so $1$ is not prime.
+    \item Show that $6$ is composite.\\
+      Note that $2*3=6$ and $2,3\not=1$ and $2,3\not=6$.
+      So $6$ is not prime.
+      
+    \item Write the first $2$ primes and justify their primeness.\\
+      Note that any prime must be larger than $1$.
+      So, we begin our search at the first integer after $1$, $2$.
+
+      Note that as  multiplication on $\ZZ^+$ is not decreasing, the only possible factors of $2$ are in the set $\set{1,2}$.
+      As $1*1\not=2$ and $2*2\not=2$ but $1*2=2*1=2$, we have that $2$ is prime.
+
+      The only positive integer less than $3$ but not $1$ or $3$ is $2$.
+      Though, we note that none of $1*2$, $2*2$, and $2*3$ are not $3$.
+      Thus, the only integers whose product is $3$ are $1$ and $3$.
+
+  \end{enumerate}
+\end{exmp}

@@ -1,0 +1,40 @@
+existential\guard
+
+
+\input{numberTheory/defns/even.tex}
+
+%TODO prove distribution of
+The following proof uses that $\forall a,b,c\in\ZZ(a(b+c)=ab+ac)$ without proof.
+
+The following are some examples utilizing a style of proof called a \emph{constructive proof}.
+This style of proof is used to show existential statements, that is to show the existence of some object.
+constructive proofs are those proofs which explicitly produce a desired object.
+
+\begin{exmp}
+\label{exmp:constructiveProofs}
+  \begin{enumerate}
+    \item  Show that there exists an even integer which can be written two ways as the sum of two positive integers.\\
+      \begin{proof}
+        Note that $n=10=2*5$ is even and \[ n = 5*5 = 7+3 \,.\]
+      \end{proof}
+    \item Let $r,s\in\ZZ$, show that $22r+18s$ is even.
+      \begin{proof}
+        Fix $r,s\in\ZZ$.
+        To show that $22r+18s$ is even, we must show  that there exists (or construct) $k\in\ZZ$ such that \[ 22r + 18s = 2k\,.\]
+        Let $k=11r+9s$.
+        Note that
+        \begin{align*}
+          2k  &= 2(11r+9s)\\
+              &= 2*11r + 2*9s\\
+              &= 22r + 18s
+        \end{align*}
+        as desired.
+      \end{proof}
+    \item Show that $\forall a,b\in\ZZ(a^2=b^2 \rightarrow a=b )$ is not true.
+    \begin{proof}
+      To show that $\forall a,b\in\ZZ(a^2=b^2 \rightarrow a=b )$ is not true, it sufficese to show that there exists $a,b\in\RR$ distinct such that $a^2=b^2$.
+      Consider $a=1$ and $b=-1$.
+      Note that $a=1\not=-1=b$ but $1^2=1=(-1)^2$.
+    \end{proof}
+  \end{enumerate}
+\end{exmp}
