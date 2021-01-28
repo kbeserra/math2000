@@ -1,0 +1,22 @@
+\guard
+
+\input{numberTheory/defns/rational.tex}
+
+%TODO show the integers are closed under addition and multiplication.
+%TODO show multiplication over the integers is commutative.
+
+\begin{prop}
+\label{prop:sumOfRaionalsIsRational}
+  If $r$ and $s$ are rational, then $r+s$ is rational.
+\end{prop}
+\begin{proof}
+  Fix $r$ and $s$ rational.
+  This means, by Definition \ref{defn:rational}, there exists $a,b,c,d\in\ZZ$ with $b,d\not=0$ such that $sb=a$ and $rd=c$.
+  Note that as $a,b,c,d\in\ZZ$, $ad+bc,bd\in\ZZ$ and as $b,d\not=0$ $bd\not=0$.
+  Finally, we see that
+  \begin{align*}
+    bd(s+r) &= bds + bdr \\
+            &= da + bc\,.
+  \end{align*}
+  Thus, by Definition \ref{defn:rational}, $s+r$ is rational.
+\end{proof}

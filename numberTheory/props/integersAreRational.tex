@@ -1,0 +1,14 @@
+\guard
+
+\input{numberTheory/defns/rational.tex}
+
+\begin{prop}
+\label{prop:integersAreRational}
+  $\forall n\in\ZZ( n\in\QQ )$.
+\end{prop}
+\begin{proof}
+  Fix $n\in\ZZ$ arbitrary.
+  To show $n$ is rational, i.e. $n\in\QQ$, it suffices to show that there exists $a,b\in\ZZ$ such that $n=\frac{a}{b}$.
+  Note $n,1\in\ZZ$, $1\not=0$, and $1n = n$.
+  Thus by Definition \ref{defn:rational}, $n$ is rational.
+\end{proof}
