@@ -1,0 +1,21 @@
+\guard
+
+\input{numberTheory/defns/divides.tex}
+
+\begin{prop}
+\label{prop:dividesIsTransitive}
+  Let $a,b,c\in\ZZ$.
+  If $a\vert b$ and $b\vert c$, then $a\vert c$.
+\end{prop}
+\begin{proof}
+  Fix $a,b,c\in\ZZ$ such that $a\vert b$ and $b\vert c$.
+  As $a\vert b$ and $b\vert c$ there exists $r,s\in\ZZ$ such that \[b=ra\text{  and  }c=sb\,.\]
+  So,
+  \begin{align*}
+    c &= sb \\
+      &= s(ra) \\
+      &= (sr)a \,.
+  \end{align*}
+  And as $s,r\in\ZZ$ $sr\in\ZZ$.
+  Therefore, $a\vert c$.
+\end{proof}

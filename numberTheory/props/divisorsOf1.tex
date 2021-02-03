@@ -1,0 +1,30 @@
+\guard
+
+\input{numberTheory/defns/divides.tex}
+\input{numberTheory/props/positiveDividesImpliesNotGreater.tex}
+
+
+\begin{prop}
+\label{prop:divisorsOf1}
+  The divisors of $1$ are $1$ and $-1$.
+\end{prop}
+\begin{proof}
+  Note that $1=1\cdot 1=-1\cdot-1$.
+  So, $-1,1\vert 1$.
+
+  Now, it suffices to show that $\forall m\in\ZZ( m\vert 1\rightarrow m=1,-1)$.
+  Suppose $m\in\ZZ$ and $m\vert 1$.
+  As $m\vert 1$ there exists $n\in\ZZ$ such that $mn=1$
+  We note that either $m$ and $n$ are both positive, or both negative.
+  Case 1. $m$ and $n$ are both positive.
+    Then Proposition \ref{prop:positiveDividesImpliesNotGreater}, $m\leq 1$.
+    But, $m$ is positive, so $0<m\leq 1$.
+    Finally, as $m\in\ZZ$ and $0<m\leq 1$, $m=1$.
+  Case 2. $m$ and $n$ are both negative.
+    Then $(-m)(-n)=mn=1$.
+    So, $-m$ and $-n$ are positive.
+    Thus, the previous case gives that $-m=1$.
+    Whence, $m=-1$.
+
+
+\end{proof}

@@ -1,0 +1,29 @@
+\guard
+
+\input{numberTheory/defns/prime.tex}
+\input{numberTheory/defns/divides.tex}
+\input{numberTheory/props/dividesIsTransitive.tex}
+
+%TODO argue that not prime is composite
+
+\begin{prop}
+\label{prop:everyPositiveNonUnitIntegerDivisibleByAPrime}
+  For any integer $n$ if $n>1$, then $n$ is divisible by a prime.
+\end{prop}
+\begin{proof}
+  Fix $n\in\ZZ$ such that $n>1$.
+  If $n$ is prime, then there is nothing to show.
+  So, suppose that $n$ is not prime.
+
+  As $n$ is not prime, it is composite, and there exists integers $r_0,s_0$ such that $n=r_0s_0$ and $1<r_0,s_0<n$.
+  As $n=r_0s_0$, $r_0\vert n$.
+
+  If $r_0$ is prime, we are dode.
+  Otherwise, there exists $r_1,s_1\in\ZZ$ such that $1<r_1,s_1<r_0$ and $r_0=r_1s_1$.
+  As $r_0=r_1s_1$, we have that $r_1\vert r_0$.
+  Though, as $r_1\vert r_0$ and $r_0\vert n$, by Proposition \ref{prop:dividesIsTransitive}, $r_1\vert n$.
+
+  If $r_1$ is prime, we are done.
+  Otherwise, we continue in this fashion producing ever smaller integers which divide $n$.
+  This process must terminate, as each successive factor is greater than $1$ but less than $n$, and there are only finitely many integers between $1$ and $n$.
+\end{proof}
