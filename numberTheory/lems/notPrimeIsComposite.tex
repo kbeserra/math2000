@@ -1,0 +1,24 @@
+\guard
+
+\input{numberTheory/defns/prime.tex}
+\input{numberTheory/defns/composite.tex}
+
+\begin{lem}
+\label{lem:notPrimeIsComposite}
+  For every integer $n>1$, $n$ is prime if, and only if, $n$ is not composite.
+\end{lem}
+\begin{proof}
+  Fix any integer $n>1$.
+  Suppose $n$ is prime.
+  By the definition of $n$ prime, the only factors of $n$ are $1$ and $n$.
+  Thus, $\not\exists r,s\in\ZZ(n=rs\wedge 1<r,s<n)$.
+  Showing that $n$ is not composite.
+
+  Suppose that $n$ is not prime.
+  As $n$ is not prime, there exists $r,s\in\ZZ$ such that $n=rs$ and neither $r$ nor $s$ are $1$ or $n$.
+  Note, as $n$ is positive, $r$ and $s$ share the same sign.
+  With out loss of generality, we may assume $r$ and $s$ are positive as otherwise we may replace them with $-r$ and $-s$.
+  Finally, as $rs=n$ and multiplication of positive integers is non-decreasing, $r,s\leq n$.
+  As neither $r$ nor $s$ is $1$ and $r,s$ is positive we have that $1<r,s$ and $r,s\leq n$.
+  Thus, by Definition \ref{defn:composite}, $n$ is composite.
+\end{proof}

@@ -28,4 +28,24 @@ Direct proofs:
 \input{numberTheory/props/divisorsOf1.tex}
 \input{numberTheory/props/everyPositiveNonUnitIntegerDivisibleByAPrime.tex}
 
+The proof of this next lemma requires a technique which we have not covered, yet.
+This techniques is called strong induction.
+Strong induction is a strengthening of regular induction.
+Regular induction is a proof technique to show a claim holds over a well-ordered sets (which do not contain a limit -- this is outside the scope of this class).
+You show that a claim holds at a base cases.
+After the base case you show the successor case; that if the claim holds at a specific place, then it necessarily holds at the next place.
+After you show these two things,
+Strong induction differs from regular, weak, induction in the successor case.
+In strong induction, we suppose that the claim holds everywhere at and bellow a point and then show that it holds at the next point.
+
+The above exposition is not necessary.
+Though, as induction is one of the more valuable skills learned in this course, I want to get a little jump start the the subject.
+\input{numberTheory/lems/positiveNotUnitIntegerPrimeOrProductOfPrimes.tex}
+
+The proof of the next theorem requires the use of the fact that $\NN$ is well-ordered by $<$.
+This means two things.
+First, $\NN$ is totally ordered by $<$, that is $\forall a,b\in\NN$ $a<b\vee a=b\vee b<a$.
+Second, every nonempty subset of $\NN$ has a $<$ least element.
 \input{numberTheory/thms/fundementalTheoremOfArithmetic.tex}
+
+% \input{numberTheory/thms/quotientRemainderTheorem.tex}

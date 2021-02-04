@@ -3,11 +3,44 @@
 \input{numberTheory/defns/prime.tex}
 \input{numberTheory/defns/divides.tex}
 
+\input{numberTheory/lems/positiveNotUnitIntegerPrimeOrProductOfPrimes.tex}
+
+\input{numberTheory/defns/divides.tex}
+
 \begin{thm}
 \label{thm:fundementalTheoremOfArithmetic}
   \textbf{(Fundemental Theorem Of Arithmetic)}
   Given any integer $n>1$, there exists a positive integer $k$, distinct primes $p_1,p_2,\dots,p_k$ and positive integers $a_1,a_2,\dots,a_k$ such that \[ n=p_1^{a_1}p_2^{a_2}\cdots p_k^{a_k}\] and any other expression is identical up to order.
 \end{thm}
 \begin{proof}
+  First, we will show existence of such a factorization.
+  Let $n>1$ be an arbitrary integer.
+  If $n$ is prime, we are done.
+  Otherwise, by Lemma \ref{lem:positiveNotUnitIntegerPrimeOrProductOfPrimes}, $n$ is a product of primes.
+  Say $n = q_1q_2\cdots q_{k'}$ for some $k'\in\NN$.
+  Certainly, it need not be the case that the $k_i$s are unique.
+  Let $k\leq k'$ be the number of unique primes within $q_1,q_2,\dots q_{k'}$.
+  Enumerate the unique primes within $q_1,q_2,\dots q_{k'}$ as $p_1,p_2,\dots,p_k$.
+  Finally, for each $i$ let $a_i$ be the number of times $p_i$ occurs within  $q_1,q_2,\dots q_{k'}$.
+  Then,
+  \begin{align*}
+    n &= q_1q_2\cdots q_{k'} \\
+      &= n=p_1^{a_1}p_2^{a_2}\cdots p_k^{a_k}
+  \end{align*}
+  as desired.
+  Though, as $1<n\in\ZZ$ was arbitrary, such a factorization exists for all integers larger than $1$.
 
+
+  Now, we show uniqueness.
+  Suppose, towards a contradiction that there exists an integer which can be factored as above in two distinct ways.
+  As there exists such an integer, as $\NN$ is well-ordered by $<$ we may let $n$ be the least $n>1$ with two distinct prime factorizations as above.
+  Note, this implies $n$ is not prime.
+  Say \[n=p_1^{a_1}p_2^{a_2}\cdots p_k^{a_k} =q_1^{b_1}q_2^{b_2}\cdots q_l^{b_l}\,.\]
+  Note, as $n$ is not prime $k,l\geq 2$.
+  As $n=p_1^{a_1}p_2^{a_2}\cdots p_k^{a_k}$, $p_1$ divides $n$.
+  So, $n$ divides $q_1^{b_1}q_2^{b_2}\cdots q_l^{b_l}$, and so there exists some $i<l$ so that $p_1\vert q_i$.
+  Without loss of generalit, we may reorder the $q_i$s so that $p_1\vert q_1$.
+  As $q_1$ is prime and $p_1\vert q_1$, $p_1=q_1$.
+  Thus \[ p_1^{a_1-1}p_2^{a_2}\cdots p_k^{a_k} = q_1^{b_1-1}q_2^{b_2}\cdots q_l^{b_l}\] are distinct prime factorizations for an integer below $n$. contradicting the minimality of $n$.
+  Thus, no such $n$ may exist.
 \end{proof}
