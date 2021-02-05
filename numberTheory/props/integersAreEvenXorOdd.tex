@@ -1,0 +1,16 @@
+\guard
+
+\input{numberTheory/thms/quotientRemainderTheorem.tex}
+
+\begin{prop}
+\label{prop:integersAreEvenXorOdd}
+  Every integer is either even or odd, but not both.
+\end{prop}
+\begin{proof}
+  Fix $n\in\ZZ$ arbitrary.
+  As $2\in\ZZ$ is positive and $n\in\ZZ$, the Quotient Remainder Theorem, Theorem \ref{thm:quotientRemainderTheorem}, applies, and there exist $q,r\in\ZZ$ such that $0\leq r<2$ and $n=2q+r$.
+  Though, as $r\in\ZZ$ and $0\leq r<2$, $r=0,1$.
+  Therefore, $n=2q$ or $n=2q+1$.
+  Thus, $n$ is either even or odd.
+  Moreover, as the Quotient Remainder Theorem  give that $q$ and $r$ are unique, $n$ cannot be even and odd.
+\end{proof}

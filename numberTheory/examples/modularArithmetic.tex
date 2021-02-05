@@ -1,0 +1,20 @@
+existential\guard
+
+
+\input{numberTheory/defns/modDiv.tex}
+
+\begin{exmp}
+\label{exmp:modularArithmetic}
+  Suppose $m\in\ZZ$ and $m\bmod 11=6$.
+  Compute $4m\bmod 11$.
+
+  $m\bmod 11=6$ means there exists $q\in\ZZ$ such that $m=11q+6$.
+  Whence,
+  \begin{align*}
+    4m  &= 4(11q+6) \\
+        &= 11\cdot4q + 24 \\
+        &= 11\cdot4q + 11\cdot 2 + 2 \\
+        &= 11(4q+2)+2\,.
+  \end{align*}
+  Thus, $4m\bmod 11=2$.
+\end{exmp}

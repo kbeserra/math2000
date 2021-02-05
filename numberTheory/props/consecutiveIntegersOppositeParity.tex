@@ -1,0 +1,24 @@
+\guard
+
+\input{numberTheory/props/integersAreEvenXorOdd.tex}
+\input{numberTheory/defns/parity.tex}
+
+\begin{prop}
+\label{prop:integersAreEvenXorOdd}
+  Any pair of consecutive integers have opposite parity.
+\end{prop}
+\begin{proof}
+  Fix $n\in\ZZ$ arbitrary.
+  Using Proposition \ref{prop:integersAreEvenXorOdd}, $m$ is either even or odd.
+
+  Case 1: $m$ is even.
+  As $m$ is even $m=2k$ for some $k$.
+  So, $m+1 = 2k+1$, so $m+1$ is odd.
+  Thus, $m$ and $m+1$ have opposite parity.
+
+
+  Case 2: $m$ is odd.
+  As $m$ is even $m=2k$+1 for some $k$.
+  So, $m+1 = 2(k+1)$, so $m+1$ is even.
+  Thus, $m$ and $m+1$ have opposite parity.
+\end{proof}
