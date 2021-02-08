@@ -1,10 +1,27 @@
 \guard
 
+\input{numberTheory/defns/divides.tex}
+
 \begin{thm}
 \label{thm:quotientRemainderTheorem}
   \textbf{(Quotient-Remainder Theorem)}
   Given and integer $n$ and positive integer $d$, there exists unique integers $q$ and $r$ such that $0\leq r < d$ and $n=qd + r$.
 \end{thm}
-% \begin{proof}
-%
-% \end{proof}
+\begin{proof}
+  Fix $n\in\ZZ$ and $d\in\ZZ^+$.
+
+  First, we will show existence.
+  Consider the set of non-negative integers of the form $n-dq$.
+  This set is clearly non-empty.
+  Thus, as $\NN$ is well-ordered, this set contains a least element, say $r=n-dq$.
+  Certianly, $r\geq 0$.
+  Now, $r<d$ as as otherwise $n-d(q+1)$ contradicts the minimality of $r$.
+
+  Now to show uniqueness.
+  Suppose that there exists $q_0,q_1,r_0,r_1\in\ZZ$ with $0\leq r_0,r_1 <d$ and \[n=dq_0+r_0=dq_1+r_1\,.\]
+  Note, as $dq_0+r_0=dq_1+r_1$, it suffices to show $r_0=r_1$.
+  Rewriting $dq_0+r_0=dq_1+r_1$, we see that $r_0-r_1=d(q_1-q_0)$ showing that $d|(r_0-r_1)$.
+  Further, as $0\leq r_1 <d$, $-d<r_1\leq 0$.
+  So, $-d < r_0-r_1 <d$.
+  Though, as $d|(r_0-r_1)$ and $-d < r_0-r_1 <d$, $r_0-r_1=0$.
+\end{proof}
