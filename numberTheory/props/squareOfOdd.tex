@@ -1,0 +1,35 @@
+\guard
+
+\input{numberTheory/defns/odd.tex}
+\input{numberTheory/thms/quotientRemainderTheorem.tex}
+
+\begin{prop}
+\label{prop:squareOfOdd}
+  The square of an odd integer has the form $8m+1$ for some $m\in\ZZ$.
+\end{prop}
+\begin{proof}
+  Fix $n\in\ZZ$ odd.
+  Using the Quotient Remainder Theorem, we hav have that $n$ has the form $4q+r$ for some $q,r\in\ZZ$ and $0\leq r<4$.
+  As $n=4q+r$ is odd, $r\not=0,2$.
+  So, $r=1$ or $r=3$.
+
+  In the case that $r=1$, then $n=4q+1$.
+  So,
+  \begin{align*}
+    n^2 &= (4q+1)^2 \\
+        &= 16q^2 + 8q + 1 \\
+        &= 8(2q^2+q) + 1\,.
+  \end{align*}
+  Note that as $q\in\ZZ$ $2q^2+q\in\ZZ$.
+  Thus, $n^2$ has the desired form.
+
+  In the case that $r=1$, then $n=4q+3$ we have that
+  \begin{align*}
+    n^2 &= (4q+3)^2 \\
+        &= 16q^2 + 24q + 9 \\
+        &= 16q^2 + 24q + 8 + 1 \\
+        &= 8(2q^2+3q+1) + 1\,.
+  \end{align*}
+  Note that as $q\in\ZZ$ $2q^2+3q+1\in\ZZ$.
+  Thus, $n^2$ has the desired form.
+\end{proof}

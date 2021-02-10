@@ -50,5 +50,105 @@ Second, every nonempty subset of $\NN$ has a $<$ least element.
 
 \input{numberTheory/exercises/integersMod4.tex}
 \input{numberTheory/props/consecutiveIntegersOppositeParity.tex}
+\input{numberTheory/props/squareOfOdd.tex}
 
 \input{numberTheory/examples/modularArithmetic.tex}
+
+
+% The following definition and subsequent lemmas do not fit in this section.
+% Though, it is here to provide more examples of proofs which require breaking into cases.
+
+\begin{defn}
+\label{defn:absoluteValue}
+\index{absolute value}
+  Let $x$ be a real number, then the \emph{absolute value} of $x$, $\vert x\vert$ is defined as
+  \[ \vert x\vert = \begin{cases}
+      x & x\geq 0 \\
+      -x& x < 0
+   \end{cases} \]
+\end{defn}
+
+\begin{lem}
+\label{lem:realIsBoundedAboveAndBelowItsAbsoluteValue}
+  $\forall r\in\RR(-\vert r\vert\leq r \leq\vert r\vert)$.
+\end{lem}
+\begin{proof}
+  Fix $r\in\RR$.
+  Either $r\geq 0$ or $r<0$.
+
+  In the case that $r\geq0$, then by Definition \ref{defn:absoluteValue}, $r=\vert r\vert$.
+  As $r=\vert r\vert$, $r\leq\vert r\vert$.
+  As $r\geq 0$, $-r\leq0$
+  So, $-r=-\vert r\vert \leq 0\leq r\leq\vert r\vert$.
+
+  In the case that $r<$, then by Definition \ref{defn:absoluteValue}, $\vert r\vert=-r$.
+  So, $-\vert r\vert=r$, and hence $-\vert r \vert\leq r$.
+  Further, as $r<0$, $-r=\vert r\vert>0$.
+  Thus, $-\vert r\vert \leq r\leq\vert r\vert$.
+\end{proof}
+
+\begin{lem}
+\label{lem:absoluteValueIsSymetric}
+  $\forall r\in\RR(\vert r\vert=\leq\vert -r\vert)$.
+\end{lem}
+\begin{proof}
+  Certanily, from Definition \ref{defn:absoluteValue}, for any $x\in\RR$
+  \begin{align*}
+    \vert x\vert &= \begin{cases}
+        x & x\geq 0 \\
+        -x& x < 0
+     \end{cases}\\
+      &= \begin{cases}
+          x & x> 0 \\
+          0 & x=0 \\
+          -x& x < 0
+       \end{cases}
+  \end{align*}
+
+
+  Now, fix $r\in\RR$.
+  Using the observation above, we have
+  \begin{align*}
+    \vert -r \vert &= \begin{cases}
+                        -r &-r > 0 \\
+                        0 & -r = 0 \\
+                        r & -r < 0
+                      \end{cases}\\
+                  &= \begin{cases}
+                        r & r < 0 \\
+                        0 & r = 0 \\
+                        r & r > 0
+                      \end{cases}\\
+                  &= \vert r \vert
+  \end{align*}
+\end{proof}
+
+
+\begin{lem}
+\label{lem:triangleInequalityForReals}
+  $\forall x,y\in\RR(\vert x + y \vert \leq \vert x \vert + \vert y \vert)$.
+\end{lem}
+\begin{proof}
+  Fix $x,y\in\RR$.
+  Either $x+y\geq 0$ or $x+y<0$.
+
+  In the case that $x+y\geq0$, then by Definition \ref{defn:absoluteValue}, $\vert x + y\vert = x + y$.
+  Applying Lemma \ref{lem:realIsBoundedAboveAndBelowItsAbsoluteValue}, $x\leq\vert x\vert$ and $y\leq\vert y\vert$.
+  So, $\vert x+y\vert = x + y \leq \vert x\vert + \vert y\vert$.
+
+  In the case that $x+y<$, then by Definition \ref{defn:absoluteValue},
+  \begin{align*}
+    \vert x + y\vert  &= -(x + y)\\
+                      &= -x -y \\
+  \end{align*}
+  Applying Lemma \ref{lem:realIsBoundedAboveAndBelowItsAbsoluteValue}, $-x\leq\vert -x \vert$ and $-y\leq\vert-y\vert$.
+  Applying Lemma \ref{lem:absoluteValueIsSymetric}, $\vert -x \vert=\vert x\vert$ and $\vert -y \vert=\vert y\vert$.
+  So, $-x\leq\vert x \vert$ and $-y\leq\vert y\vert$
+  Finally, we have that
+  \begin{align*}
+    \vert x + y\vert  &= -(x + y) \\
+                      &= -x -y  \\
+                      &= -x + (-y) \\
+                      &\leq \vert x\vert + \vert y \vert \,.
+  \end{align*}
+\end{proof}
