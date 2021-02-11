@@ -1,0 +1,27 @@
+\section{Suppose Otherwise}
+
+\input{logic/defns/tautology.tex}
+
+The central idea of proving a statement by contradiction is that mathematics must be non-contradictory.
+That is, for any statement $\phi$ either $\phi$ is true or $\phi$ is false but not both!
+More formally, the statement form $\neg(p\wedge\neg p)$ is a tautology.
+
+It should be noted that proofs by contrition, while valid, are often undesirable.
+This is because proofs by contradiction often do not reveal the same insight offered by constructive or direct proofs.
+Further, proofs by contradiction can often, if done without care, feel inelegant, much like a sledgehammer.
+
+Suppose we are attempting to prove a statement $\phi$ via contradiction.
+The common structure of a proof by contradiction is as follows.
+\begin{proof}
+  Suppose, towards a contradiction, $\neg\phi$.\\
+  Unpack what $\neg\phi$ means.\\
+  Perform some work and obtain a formula $\neg\psi$ where we know $\psi$ to be true before we supposed $\neg\phi$.\\
+  This gives $\psi$ and $\neg\psi$, a contradiction.\\
+  Whence, $\phi$.
+\end{proof}
+Now, the above is a simple sketch of a near ideal argument.
+In practice, this argument can take many forms.
+In this section, we will show some examples of this technique to help the reader become more familiar with the process.
+
+\input{numberTheory/props/integersAreUnbounded.tex}
+\input{numberTheory/props/noIntegerBothEvenAndOdd.tex}

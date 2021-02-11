@@ -1,0 +1,23 @@
+\guard
+
+\input{numberTheory/defns/even.tex}
+\input{numberTheory/defns/odd.tex}
+
+\begin{prop}
+\label{prop:noIntegerBothEvenAndOdd}
+  No integer is both even and odd.
+\end{prop}
+\begin{proof}
+  Suppose, towards a contradiction, that there is an integer which is both even and odd.
+  Let $n\in\ZZ$ be such an integer.
+  As $n$ is both even and odd, there exists $a,b\in\ZZ$ such that \[ 2a=n=2b+1\,.\]
+  Though,
+  \begin{align*}
+              && n &=n \\
+    \implies  && 2a &= 2b + 1 \\
+    \implies  && 2a-2b &= 1 \\
+    \implies  && a-b &= \frac{1}{2}\not\in\ZZ
+  \end{align*}
+  Though, as $a,b\in\ZZ$ $a-b\in\ZZ$, a contradiction.
+  Whence, there is no integer which is both even and odd.  
+\end{proof}

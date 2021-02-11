@@ -1,0 +1,14 @@
+\guard
+
+\begin{prop}
+\label{prop:integersAreUnbounded}
+  There is no greatest integer.
+\end{prop}
+\begin{proof}
+  Suppose, towards a contradiction, that there is a greatest integer.
+  That is, there exists some $n\in\ZZ$ such that $\forall m\in\ZZ$ $m\leq n$.
+  Consider $n+1$.
+  As $\ZZ$ is closed under successors, the operation $\cdot\mapsto\cdot+1$, $n+1\in\ZZ$.
+  Though, $n\lneq n+1$ contradicting our assumption of $n$.
+  Thus, there is not greatest integer.
+\end{proof}
