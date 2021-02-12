@@ -1,0 +1,16 @@
+\guard
+
+\input{numberTheory/defns/rational.tex}
+\input{numberTheory/props/productOfRaionalsIsRational.tex}
+\input{numberTheory/props/sumOfRaionalsIsRational.tex}
+
+\begin{prop}
+\label{prop:sumOfRationalAndIrrationalIsIrrational}
+  The sum of a rational number and an irrational number is irrational.
+\end{prop}
+\begin{proof}
+  Suppose towards a contradiction that this is false.
+  Thus, there exists a rational $r$ and an irrational $s$ so that $r+s$ is rational.
+  Though, as $r$ is rational by Proposition \ref{prop:productOfRaionalsIsRational}, $-r$ is rational.
+  Further, as $r+s$ and $-r$ are ration applying Proposition \ref{prop:sumOfRaionalsIsRational}, $r+s+(-r)=s$ is rational, a contradiction.
+\end{proof}
