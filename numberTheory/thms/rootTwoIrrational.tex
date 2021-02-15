@@ -1,0 +1,38 @@
+\guard
+
+\input{numberTheory/defns/even.tex}
+\input{numberTheory/defns/odd.tex}
+\input{numberTheory/defns/rational.tex}
+\input{numberTheory/defns/irrational.tex}
+\input{numberTheory/defns/divides.tex}
+\input{numberTheory/thms/fundamentalTheoremOfArithmetic.tex}
+\input{numberTheory/lems/IfSquareOfIntegerIsEvenThenEven.tex}
+
+\begin{thm}
+\label{thm:rootTwoIrrational}
+  $\sqrt{2}$ is irrational.
+\end{thm}
+\begin{proof}
+  Suppose otherwise.
+  That is, $\sqrt{2}$ is rational.
+
+  As $\sqrt{2}$ is rational, there exists $a,b\in\ZZ$ such that $\sqrt{2}b=a$ and $b\not=0$.
+  Write $\sqrt{2}=\frac{a}{b}$.
+
+  Suppose further that $a$ and $b$ share no common factors.
+  That is, $\forall k\in\ZZ( k\nmid a \vee k\nmid b)$.
+  (We can do this by using the Fundamental Theorem of Arithmetic, writing out the finite prime factorizations of $a$ and $b$ and `cancelling' like primes.)
+
+  As $\sqrt{2}=\frac{a}{b}$, \[ 2 = \frac{a^2}{b^2}\,.\]
+  Thus, \[ a^2 = 2b^2\,,\]
+  showing that $a^2$ is even.
+  So, using Proposition \ref{lem:IfSquareOfIntegerIsEvenThenEven}, we have that $a$ is even.
+  As $a$ is even, there exists $k\in\ZZ$ such that $a=2k$.
+  Substituting $a=2k$ in $2 = \frac{a^2}{b^2}$, we have \[ 2 = \frac{4k^2}{b^2}\,,\] thus \[ b^2 = 2k^2\,.\]
+  So, $b^2$ is even.
+  Using Proposition \ref{lem:IfSquareOfIntegerIsEvenThenEven} yet again shows that $b$ is even.
+  So, $b$ can be written as $2l$ for some $l\in\ZZ$.
+
+  Though, this shows that $a$ and $b$ are divisible by $2$, contradicting that $a$ and $b$ share no common factors.
+  Thus, $\sqrt{2}$ is irrational.
+\end{proof}

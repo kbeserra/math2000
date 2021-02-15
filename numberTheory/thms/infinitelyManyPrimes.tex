@@ -1,0 +1,28 @@
+\guard
+
+\input{numberTheory/defns/prime.tex}
+\input{numberTheory/props/consecutiveIntegersNotDivisibleBySamePrime.tex}
+\input{numberTheory/thms/fundamentalTheoremOfArithmetic.tex}
+
+\begin{thm}
+\label{thm:infinitelyManyPrimes}
+  There are infinitely many primes.
+\end{thm}
+\begin{proof}
+  Suppose otherwise.
+  That is, there exists finitely many primes.
+  As there are finitely many primes, we may enumerate them as \[ p_1,p_2,\dots,p_n\] for some $n\in\NN$.
+  Set, \[ P := p_1 p_2\cdots p_n\,.\]
+
+  Let $i$ any integer with $1\leq i\leq n$.
+  As $P= p_1 p_2\cdots p_n$, $p_i|P$.
+  Thus, by Proposition \ref{prop:consecutiveIntegersNotDivisibleBySamePrime}, $p\nmid(P+1)$.
+  Thus, $P+1$ is not divisible by any prime $p_i$.
+  Though, the $p_i$ enumerate all of the primes, so $P+1$ is not divisible by a prime.
+
+  As $P+1$ is not divisible by any prime, the Fundamental Theorem Of Arithmetic provides, the prime factorization of $P+1$ is itself.
+  Whence, $P+1$ itself is prime.
+  Though, there does not exist an $i$ with $1\leq i\leq n$ such that $p_i = P+1$, as shown earlier.
+  Thus the prime $P+1$ is not on our list of all primes, contradicting that we listed all of the primes.
+  Thus, there are infinitely many primes.
+\end{proof}

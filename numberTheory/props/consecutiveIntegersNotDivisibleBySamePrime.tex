@@ -1,0 +1,24 @@
+\guard
+
+\input{numberTheory/defns/prime.tex}
+\input{numberTheory/defns/divides.tex}
+\input{numberTheory/props/divisorsOf1.tex}
+
+\begin{prop}
+\label{prop:consecutiveIntegersNotDivisibleBySamePrime}
+  For any integer $a$ and prime $p$ if $p|a$, then $p\nmid(a+1)$.
+\end{prop}
+\begin{proof}
+  Suppose otherwise.
+  That is, there exists some $a\in\ZZ$ and $p$ prime such that $p|a$ and $p|(a+1)$.
+  As $p|a$ and $p|(a+1)$, there exists $r,s\in\ZZ$ such that \[ rp=a\quad\text{and}\quad sp=a+1\,.\]
+  Then,
+  \begin{align*}
+    1 &=  a+1 - a \\
+      &= rp - sp \\
+      &= (r-s)p \,.
+  \end{align*}
+  So, as $(r-s)\in\ZZ$, $p|1$.
+  So, by Proposition \ref{prop:divisorsOf1}, $p=\pm 1$.
+  But $p$ is prime, so $p>1$, a contradiction.
+\end{proof}
