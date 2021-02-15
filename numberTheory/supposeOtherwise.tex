@@ -26,3 +26,16 @@ In this section, we will show some examples of this technique to help the reader
 \input{numberTheory/props/integersAreUnbounded.tex}
 \input{numberTheory/props/noIntegerBothEvenAndOdd.tex}
 \input{numberTheory/props/sumOfRationalAndIrrationalIsIrrational.tex}
+
+% We need the following for the next discussion.
+\input{logic/defns/contrapositive.tex}
+\input{logic/defns/universalConditionalStatement.tex}
+
+Proof by contrapositive.\\
+Suppose we are tasked with proving a statement of the form $\forall x( P(x)\rightarrow Q(x))$.
+Suppose further that the predicate $P(x)$ gives little in the way of describing $Q(x)$ (that is, showing $\forall x( P(x)\rightarrow Q(x))$ is hard).
+Then, maybe before we attempt a proof via contradiction, we can attack the problem directly from a different direction.
+That is, recall that $\forall x( P(x)\rightarrow Q(x))$ is logically equivalent to its contrapositive $\forall x( \neg Q(x)\rightarrow \neg P(x))$.
+So, a proof of $\forall x( P(x)\rightarrow Q(x))$ by contradiction is a direct proof of $\forall x( \neg Q(x)\rightarrow \neg P(x))$.
+The following lemma is an example of this technique.
+\input{numberTheory/lems/IfSquareOfIntegerIsEvenThenEven.tex}

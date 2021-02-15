@@ -1,0 +1,22 @@
+\guard
+
+\input{numberTheory/defns/even.tex}
+\input{numberTheory/props/integersAreEvenXorOdd.tex}
+
+\begin{lem}
+\label{lem:IfSquareOfIntegerIsEvenThenEven}
+  For every integer $n$ if $n^2$ is even, then $n$ is even.
+\end{lem}
+\begin{proof}
+  Fix $n\in\ZZ$ and suppose that $n$ is not even.
+  As $n$ is not even, we have by Proposition \ref{prop:integersAreEvenXorOdd} that $n$ is odd.
+  As $n$ is odd, there exists $k\in\ZZ$ such that $n=2k+1$.
+  So,
+  \begin{align*}
+    n^2 &= (2k+1)^2 \\
+        &= 4k^2 + 4k + 1 \\
+        &= 2(2k^2+2k) + 1\,,
+  \end{align*}
+  showing $n^2$ is odd.
+  Again, by Proposition \ref{prop:integersAreEvenXorOdd}, as $n^2$ is odd $n^2$ is not even.
+\end{proof}
