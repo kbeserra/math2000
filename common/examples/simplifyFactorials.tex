@@ -1,0 +1,38 @@
+\guard
+
+
+\input{common/defns/factorial.tex}
+
+\begin{exmp}
+\label{exmp:computeFactorials}
+  Simplify the following:
+  \begin{enumerate}
+    \item $\frac{8!}{7!}$
+      \begin{align*}
+        \frac{8!}{7!} &= \frac{8\cdot 7!}{7!} \\
+                      &= \frac{8}{1} \\
+                      &= 1
+      \end{align*}
+    \item $\frac{5!}{2!3!}$
+      \begin{align*}
+        \frac{5!}{2!3!} &= \frac{5\cdot 4\cdot 3!}{2!3!} \\
+                        &= \frac{5\cdot 4}{2!} \\
+                        &= \frac{5\cdot 4}{2} \\
+                        &= 5\cdot 2 \\
+                        &= 10
+      \end{align*}
+    \item $\frac{(n+1)!}{n!}$
+      \begin{align*}
+        \frac{(n+1)!}{n!} &= \frac{(n+1)n!}{n!} \\
+                          &= \frac{n+1}{1} \\
+                          &= n+1
+      \end{align*}
+    \item $\frac{n!}{(n-3)!}$
+      \begin{align*}
+        \frac{n!}{(n-3)!} &= \frac{n(n-1)!}{(n-2)!} \\
+                          &= \frac{n(n-1)(n-2)!}{(n-2)!} \\
+                          &= \frac{n(n-1)}{1} \\
+                          &= n-1
+      \end{align*}
+  \end{enumerate}
+\end{exmp}

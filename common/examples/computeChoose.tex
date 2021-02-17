@@ -1,0 +1,35 @@
+\guard
+
+
+\input{common/defns/sumOfSequence.tex}
+
+\begin{exmp}
+\label{exmp:computeSum}
+  Compute:
+  \begin{enumerate}
+    \item ${8 \choose 5 }$\\
+      \begin{align*}
+        {8 \choose 5 } &= \frac{ 8! }{ 5!( 8-5)! }\\
+                       &= \frac{ 8! }{ 5!3! } \\
+                       &= \frac{ 8\cdot 7\cdot 6 \cdot 5! }{ 5!3! } \\
+                       &= \frac{ 8\cdot 7\cdot 6 }{ 3! } \\
+                       &= \frac{ 8\cdot 7\cdot 6 }{ 6 } \\
+                       &= 8\cdot 7 \\
+                       &= 56
+      \end{align*}
+    \item ${4 \choose 0 }$\\
+      \begin{align*}
+        {4 \choose 0 } &= \frac{ 4! }{ 0!( 4-0)! }\\
+                       &= \frac{ 4! }{ 0!4! } \\
+                       &= \frac{ 1 }{ 1 } \\
+                       &= 1
+      \end{align*}
+    \item ${ {n+1} \choose n }$\\
+      \begin{align*}
+        { {n+1} \choose n }  &= \frac{ (n+1)! }{ n!( n+1-n)! } \\
+                             &= \frac{ (n+1)n! }{ n!( 1)! } \\
+                             &= \frac{ (n+1) }{ 1 } \\
+                             &= n+1
+      \end{align*}
+  \end{enumerate}
+\end{exmp}
