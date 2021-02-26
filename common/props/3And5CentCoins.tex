@@ -1,0 +1,42 @@
+\guard
+
+\begin{prop}
+\label{prop:3And5CentCoins}
+  For all integers $n\geq 8$, $n\cent$ can be made with only $3\cent$ and $5\cent$ coins.
+\end{prop}
+\begin{proof}
+  We'll prove this by induction on integers $n\geq 8$.
+
+  Base step. $8\cent$ can be formed using a single $3\cent$ coin and a single $5\cent$ coin.
+  Thus, $8\cent$ can be formed using only $3\cent$ and $5\cent$ coins.
+
+  Inductive step. Suppose $n\geq 8$ and $n\cent$ can be formed using only $3\cent$ and $5\cent$ coins.
+  Let $t$ be the number of $3\cent$ coins used to form $n\cent$.
+  Similarly, let $f$ be the number of $5\cent$ coins used to form $n\cent$.
+  Then, out inductive hypothesis gives that $n\cent = t\cdot3\cent + f\cdot5\cent$.
+  We'll break into cases depending on the value of $f$.
+  Either $f>0$ or $f=0$.
+
+  In the case that $f>0$, then $f-1\geq 0$ and
+  \begin{align*}
+    (n+1)\cent  &= n\cent + 1\cent \\
+                &= (t\cdot3 + f\cdot5 + 1)\cent \\
+                &= (t\cdot3 + f\cdot5 + 2\cdot3 - 5)\cent\\
+                &= (t+2)3\cent + (f-1)5\cent\,.
+  \end{align*}
+  Thus, we can form $(n+1)\cent$ using just $3\cent$ and $5\cent$ coins.
+
+  in the case that $f=0$, we have that $n\cent = t\cdot3\cent$.
+  As $n\geq 8$, we have that $t\geq 3$.
+  So, $t-3\geq 0$.
+  Now, similar to before, we have
+  \begin{align*}
+    (n+1)\cent  &= n\cent + 1\cent \\
+                &= (t\cdot3 + 1)\cent \\
+                &= (t\cdot3 + 2\cdot5 - 3\cdot3)\cent\\
+                &= (t-3)3\cent + 2\cdot5\cent\,.
+  \end{align*}
+  Thus, we can form $(n+1)\cent$ using just $3\cent$ and $5\cent$ coins.
+
+  So, in either case we can form $(n+1)\cent$ using only $3\cent$ and $5\cent$ coins.
+\end{proof}

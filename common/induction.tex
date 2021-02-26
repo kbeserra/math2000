@@ -1,0 +1,35 @@
+\section{Induction}
+
+\input{logic/defns/predicate.tex}
+
+The principle of mathematical induction is:
+\index{weak induction}
+Let $P(n)$ some predicate where the domain of $n$ is the integers, or some subset of the integers.
+Let $a\in\ZZ$ be some fixed value, and suppose that $a$ is in the domain of $n$ in $P(n)$.
+Then, if
+\begin{enumerate}
+  \item $P(a)$ is true and
+  \item $\forall k\geq a$ if $P(k)$ is true, then $P(k+1)$ is true,
+\end{enumerate}
+then $\forall k\geq a(P(k))$ is true.
+This is known as \emph{weak induction}.
+Proofs by induction generally follow a common pattern.
+\index{base step}
+\index{inductive step}
+\index{inductive hypothesis}
+First, the proof shows (1) holds, this is known as the \emph{base step}.
+Second, the proof shows (2), which is called the \emph{inductive step}.
+During the inductive step, the assumption that $P(k)$ holds for some fixed $k\geq a$ is called the \emph{inductive hypothesis}.
+
+Put simply, if $P(n)$ is some predicate with the variable $n$ an integer, then if we can show that $P(a)$ holds for some starting value and that $P$ holding at some value implies that $P$ holds at the next value, then $P$ holds at every value greater that or equal to the base value.
+
+You can think of this as a line of dominos standing upright so that if you knock down one domino, then that domino knocks down its neighbor.
+Mathematical induction is saying that, in this scenario, if you knock down the first domino, then all of the dominos will be knocked down!
+
+We will see many examples of induction in the future.
+
+\input{common/props/3And5CentCoins.tex}
+\input{common/props/sumOfConsequtiveIntegers.tex}
+
+\input{common/exercises/sumOfSquares.tex}
+\input{common/exercises/sumOfGeometricSequence.tex}

@@ -1,0 +1,31 @@
+\guard
+
+\input{common/defns/sumOfSequence.tex}
+
+\begin{prop}
+\label{prop:sumOfConsequtiveIntegers}
+  \[\forall n\in\NN\quad\sum_{i=0}^n i = \frac{n(n+1)}{2}\,.\]
+\end{prop}
+\begin{proof}
+  We'll prove this by induction on integers $n\in\NN$.
+
+  Base step.
+  By Definition \ref{defn:sumOfSequence} and some simple arithmatic, we have that
+    \begin{align*}
+      \sum_{i=0}^0 i  &= 0 \\
+                      &= \frac{ 0(0+1)}{2}\,,
+    \end{align*}
+  and so the claim holds at $n=0$.
+
+  Inductive step. Let $n\in\NN$ and suppose that $\sum_{i=0}^n i = \frac{n(n+1)}{2}$.
+  Then, by Definition \ref{defn:sumOfSequence},
+    \[ sum_{i=0}^{n+1} i = \left( sum_{i=0}^{n} i \right) + (n+1)\,. \]
+  Now, using our inductive hypothesis we have
+    \begin{align*}
+      \sum_{i=0}^{n+1} i &= \left( sum_{i=0}^{n} i \right) + (n+1) \\
+                        &= \frac{n(n+1)}{2} + (n+1) \\
+                        &= \frac{n(n+1)}{2} + \frac{2(n+1)}{2} \\
+                        &= \frac{ n(n+1)+2(n+1)}{2} \\
+                        &= \frac{ (n+1)(n+2) }{2} \,.
+    \end{align*}
+\end{proof}
