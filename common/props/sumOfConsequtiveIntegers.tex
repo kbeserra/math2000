@@ -19,12 +19,12 @@
 
   Inductive step. Let $n\in\NN$ and suppose that $\sum_{i=0}^n i = \frac{n(n+1)}{2}$.
   Then, by Definition \ref{defn:sumOfSequence},
-    \[ sum_{i=0}^{n+1} i = \left( sum_{i=0}^{n} i \right) + (n+1)\,. \]
+    \[ \sum_{i=0}^{n+1} i = \left( \sum_{i=0}^{n} i \right) + (n+1)\,. \]
   Now, using our inductive hypothesis we have
     \begin{align*}
-      \sum_{i=0}^{n+1} i &= \left( sum_{i=0}^{n} i \right) + (n+1) \\
-                        &= \frac{n(n+1)}{2} + (n+1) \\
-                        &= \frac{n(n+1)}{2} + \frac{2(n+1)}{2} \\
+      \sum_{i=0}^{n+1} i &= \left( \sum_{i=0}^{n} i \right) + (n+1) \\
+                        &= \frac{ n(n+1)}{2} + (n+1) \\
+                        &= \frac{ n(n+1)}{2} + \frac{2(n+1)}{2} \\
                         &= \frac{ n(n+1)+2(n+1)}{2} \\
                         &= \frac{ (n+1)(n+2) }{2} \,.
     \end{align*}
