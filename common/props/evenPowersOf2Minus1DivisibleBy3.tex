@@ -1,0 +1,32 @@
+\guard
+
+\input{numberTheory/defns/divides.tex}
+
+\begin{prop}
+\label{prop:evenPowersOf2Minus1DivisibleBy3}
+  For all $n\in\NN$ $2^{2n}-1$ is divisible by $3$.
+\end{prop}
+\begin{proof}
+  We prove this by induction on $n\in\NN$.
+
+  If $n=0$, then
+  \begin{align*}
+    2^{2n}-1  &= 2^{2\cdot0}-1 \\
+              &= 1 - 1
+              &= 0\,.
+  \end{align*}
+  Though, as $0 = 3\cdot 0$, we have that $2^{2\cdot 0}-1$ is divisible by $3$.
+
+  Now, suppose that $n\in\NN$ is such that $2^{2n}-1$ is divisible by $3$.
+  As $2^{2n}-1$ is divisible by $3$, there exists some $a\in\ZZ$ so that $3a = 2^{2n}-1$.
+  Now,
+  \begin{align*}
+    2^{2(n+1)}-1  &= 2^{2n+2} - 1 \\
+                  &= 2^{2n}4 - 1 \\
+                  &= 2^{2n}(3+1) - 1 \\
+                  &= 3\cdot 2^{2n} + 2^{2n} - 1 \\
+                  &= 3\cdot 2^{2n} + 3a \\
+                  &= 3( 2^{2n} + a )\,.
+  \end{align*}
+  So, as $2^{2n}+a\in\ZZ$ $3|2^{2(n+1)}-1$.
+\end{proof}

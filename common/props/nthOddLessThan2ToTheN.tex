@@ -1,0 +1,28 @@
+\guard
+
+\begin{prop}
+\label{prop:nthOddLessThan2ToTheN}
+  For all $n\in\NN$ if $n\geq 2$, then $2n+1 < 2^n$.
+\end{prop}
+\begin{proof}
+  We prove this by induction on $n\in\NN$ with $n>2$.
+
+  If $n=3$, then
+  \begin{align*}
+    2n+1  &= 2\cdot 3 + 1 \\
+          &= 7 \\
+          &< 8 \\
+          &= 2^3 \\
+          &= 2^n
+  \end{align*}
+
+  Now, suppose that $n\in\NN$ with $n>3$ is such that $2n+1 < 2^n$.
+  Then,
+  \begin{align*}
+    2(n+1)+1  &= 2n + 3 \\
+              &= 2n + 1 + 2 \\
+              &< 2^n + 2 \\
+              &< 2^n + 2^n \\
+              &= 2^{n+1}\,.
+  \end{align*}
+\end{proof}

@@ -1,0 +1,29 @@
+\guard
+
+
+\input{common/defns/sequence.tex}
+
+\begin{exmp}
+\label{exmp:showClosedFormFormulaWorks}
+  Define the sequence $a$ by $a_0=2$ and $a_{k+1} = 5a_k$.
+  \begin{enumerate}
+    \item Write the first four terms of the sequence $a$.\\
+    \[ a_0 = 2,\,a_1=10,\,a_2=50,\,a_3=250\,.\]
+    \item Use induction to show that $a_k=2\cdot 5^k$ for $k\in\NN$.\\
+    We first note, that when $k=0$, we have that
+    \begin{align*}
+      2\cdot 5^0  &= 2 \cdot 1 \\
+                  &= 2 \\
+                  &= a_0\,.
+    \end{align*}
+
+    Now, suppose $k\in\NN$ and $a_k = 2\cdot 5^k$.
+    Then, by definition we have,
+    \begin{align*}
+      a_{k+1} &= 5a_k \\
+              &= 5\cdot 2 \cdot 5^k \\
+              &= 2 \cdot 5^{k+1}\,.
+    \end{align*}
+    Thus, by induction, we have that $\forall k\in\NN\,a_k=2\cdot 5^k$.
+  \end{enumerate}
+\end{exmp}
