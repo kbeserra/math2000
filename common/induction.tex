@@ -1,11 +1,13 @@
+\guard
 \section{Induction}
+\label{sec:induction}
 
 \input{logic/defns/predicate.tex}
 
 The principle of mathematical induction is:
 \index{weak induction}
 Let $P(n)$ some predicate where the domain of $n$ is the integers, or some subset of the integers.
-Let $a\in\ZZ$ be some fixed value, and suppose that $a$ is in the domain of $n$ in $P(n)$.
+Let $a\in\ZZ$ be some fixed value, and suppose that for all $c\geq a$, $c$ is in the domain of $n$ in $P(n)$.
 Then, if
 \begin{enumerate}
   \item $P(a)$ is true and

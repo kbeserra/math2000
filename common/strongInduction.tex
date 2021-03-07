@@ -1,0 +1,26 @@
+\guard
+\section{Strong Induction}
+\label{sec:strongInduction}
+
+\input{logic/defns/predicate.tex}
+
+The principle of strong induction is:
+\index{weak induction}
+Let $P(n)$ some predicate where the domain of $n$ is the integers, or some subset of the integers.
+Let $a,b\in\ZZ$ be some fixed values with $a<b$, and suppose that for all $c\geq a$, $c$ is in the domain of $n$ in $P(n)$.
+Then, if
+\begin{enumerate}
+  \item $P(a),P(a+1),\dots,P(b)$ are true and
+  \item $\forall k\geq b$ if $\forall i\in\ZZ$ with $a\leq i\leq k$ $P(i)$ holds, then $P(k+1)$ is true,
+\end{enumerate}
+then $\forall k\geq a(P(k))$ is true.
+This is known as \emph{strong induction}.
+You'll notice that both the base and inductive steps of strong induction differ slightly from weak induction covered in Section \ref{sec:induction}.
+
+Strong induction allows for proving statements which require checking some finite number of values in the base step.
+One case where you may want this power is when proving that some recurrence relation which is defined using more than one previous value.
+Further, and more importantly, strong induction differs from its weaker counterpart in that the inductive step makes the assumption that the desired claim holds for all values up to and included some value before moving to the next value.
+
+\input{common/examples/recurrenceRelation.tex}
+
+\input{common/props/naturalsLargerThanOneDivisibleByPrime.tex}

@@ -1,0 +1,31 @@
+\guard
+
+\input{common/defns/sequence.tex}
+
+\begin{exmp}
+\label{exmp:recurrenceRelation}
+  Define the sequence $s$ as \[ s_0=0,~s_1=4,s_k=6s_{k-1}-5s_{k-2}\,.\]
+  We want to show that $\forall n\in\NN$ $s_n = 5^n-1$.
+
+  We do so by strong induction on $n\in\NN$.
+
+  Base step, we check that the claim holds for $n=0$ and $n=1$.
+  Here, we note that $s_0 = 0 = 5^0-1$ and $s_1 = 4 = 5^1-1$.
+  So, the claim holds at the first two values for $n$.
+
+  Now, we check the inductive step.
+  Let $n\in\NN$ and suppose that for all $k\in\NN$ with $k\leq n$ $s_k = 5^k-1$.
+  Now, by definition $s_{n+1} = 6 s_n - 5 s_{n-1}$.
+  Though, out inductive hypothesis provides that $s_n = 5^n-1 $ and $s_{n-1}=5^{n-1}-1$.
+  Thus,
+  \begin{align*}
+    s_{n+1} &= 6 s_n - 5 s_{n-1} \\
+            &= 6 ( 5^n - 1 ) - 5 ( 5^{n-1} - 1 ) \\
+            &= 6\cdot 5^n - 6 - 5^n - 5 \\
+            &= 5\cdot 5^n - 1 \\
+            &= 5^{n+1} - 1\,.
+  \end{align*}
+  showing that the claim holds at $n+1$.
+
+  Thus, by induction, we have that $\forall n\in\NN$ $s_n = 5^n-1$.
+\end{exmp}

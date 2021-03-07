@@ -1,0 +1,26 @@
+\guard
+
+\input{numberTheory/lems/notPrimeIsComposite.tex}
+\input{numberTheory/props/dividesIsTransitive.tex}
+
+\begin{prop}
+\label{prop:naturalsLargerThanOneDivisibleByPrime}
+  Each integers larger than $1$ is divisible by a prime.
+\end{prop}
+\begin{proof}
+  We prove this by strong induction on $n\in\NN$ with $n>1$.
+
+  Consider the case where $n=2$.
+  Then $n$ is prime and divides itself.
+  Thus, the claim holds.
+
+  Now, suppose that $n\in\NN$ with $n>1$ is such that every $k$ with $1<k\leq n$, $k$ is divide by a prime.
+  Certainly, $n+1$ is either prime or is not prime.
+
+  If $n+1$ is prime, then as before, as $n+1$ divides itself the claim holds.
+
+  Otherwise, by Lemma \ref{lem:notPrimeIsComposite} $n+1$ is composite.
+  As $n+1$ is composite, there exists $a, b$ so that $1<a,b<n+1$ and $ab = n+1$.
+  Though, as $1<a<n+1$ $1<a \leq n$, and our inductive hypothesis provides that $a$ is divisible by a prime.
+  Though, as $a$ divides $n+1$ and $a$ is divisible by a prime, proposition \ref{prop:dividesIsTransitive}, $n+1$ is divisible by a prime.
+\end{proof}
