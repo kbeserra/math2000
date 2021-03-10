@@ -1,0 +1,34 @@
+\guard
+
+\input{setTheory/defns/subset.tex}
+
+\begin{exmp}
+\label{exmp:earlySubsetExample}
+  Set \[ A := \set{ n\in\ZZ \mid \exists r\in\ZZ( n = 6r )} \] and \[ B := \set{ n\in\ZZ\mid \exists s\in\ZZ( n=3s )}\,. \]
+  Note \[ A = \set{ \dots, -18,-12,-6,0,6,12,18,\dots} \] and \[ B = \set{ \dots,-9,-6,-3,0,3,6,9,\dots }\,.\]
+
+  First, let us show that $A\subseteq B$.
+  That is, $\forall x( x\in A \rightarrow x\in B)$.
+  Let $x$ be arbitrary, and suppose that $x\in A$.
+  From the definition of $A$, $x\in A$ means that $\exists r\in\ZZ( x= 6r)$.
+  Let $r\in\ZZ$ be such that $x=6r$.
+  Set $s=2r$, and observe that
+  \begin{align*}
+    x &= 6r \\
+      &= 3\cdot2 r\\
+      &= 3s\,.
+  \end{align*}
+  So, $x=3s$ for some $s$, showing that $x\in B$.
+  Finally, as $x$ was arbitrary in $A$, we have that $A\subseteq B$.
+
+
+  Now, the reverse is not true.
+  That is, $B\not\subseteq A$.
+  This is becuase there is some element of $B$ which is not an element of $A$.
+  One such element is $3$.
+  Note, as $3=3\cdot 1$, $3\in B$.
+  Though, as there does not exist a $r\in\ZZ$ such that $3=6r$, $3\not\in A$.
+  So, $B\not\subseteq A$.
+
+  Thus, $A$ is a proper subset of $B$. 
+\end{exmp}

@@ -1,0 +1,37 @@
+\guard
+
+\input{setTheory/defns/extensionality.tex}
+\input{setTheory/defns/subset.tex}
+
+\begin{exmp}
+\label{exmp:setEqualityBySubsets}
+  Let \[ A := \set{ 2a \mid a\in\ZZ } \] and \[ B := \set{ 2b-2\mid b\in\ZZ }\,. \]
+
+  Fix $x\in A$.
+  As $x\in A$, $x=2a$ for some $a\in\ZZ$.
+  As $a\in\ZZ$, $a+1\in\ZZ$.
+  Set $b = a+1$, and observe that
+  \begin{align*}
+    x &= 2a \\
+      &= 2a + 2 - 2 \\
+      &= 2(a+1) - 2 \\
+      &= 2b - 2\,,
+  \end{align*}
+  showing that that $x\in B$.
+  So, as $x$ was arbitrary, $A\subseteq B$.
+
+  Now, fix $x\in B$.
+  As $x\in B$, $x = 2b-2$ for some $b\in \ZZ$.
+  Set $a = b-1$, and as $b\in\ZZ$ $a\in\ZZ$ as well.
+  Finally,
+  \begin{align*}
+    x &= 2b-2 \\
+      &= 2b - 2 + 2 - 2 \\
+      &= 2(b-1) \\
+      &= 2a\,,
+  \end{align*}
+  showing that $x\in A$.
+  So, as $x$ was arbitrary, $B\subseteq A$.
+
+  Thus, as $A\subseteq B$ and $B\subseteq A$, $A=B$.
+\end{exmp}
