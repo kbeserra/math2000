@@ -1,0 +1,15 @@
+\guard
+
+\input{setTheory/defns/union.tex}
+
+\begin{prop}
+\label{prop:unionIsCommutative}
+  For any $A$ and $B$, $A\cup B = B\cup A$.
+\end{prop}
+\begin{proof}
+  \begin{align*}
+    A\cup B &= \set{ x\mid x\in A \vee x\in B } \\
+            &= \set{ x\mid x\in B \vee x\in A } \\
+            &= B\cup A
+  \end{align*}
+\end{proof}

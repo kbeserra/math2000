@@ -1,0 +1,17 @@
+\guard
+
+\input{setTheory/defns/disjoint.tex}
+\input{numberTheory/props/integersAreEvenXorOdd.tex}
+
+\begin{exmp}
+\label{exmp:setOfEvenAndOddIntegersAreDisjoint}
+  Let $E$ and $O$ be the set of even and odd integers respectively.
+  $E$ and $O$ are disjoint.
+
+  To show this, consider any $n\in\ZZ$.
+  Using Proposition \ref{prop:integersAreEvenXorOdd}, $n$ is either even or odd, but not both.
+  In the case that $n$ is even, $n\in E$ and $n\not\in O$.
+  Similarly, if $n$ is odd, then $n\in O$ and $n\not\in O$.
+  Thus \[E\cap O=\set{ n\in\ZZ\mid n\in O \wedge n\in E}=\emptyset\,.\]
+  So, $E$ and $O$ are disjoint.
+\end{exmp}

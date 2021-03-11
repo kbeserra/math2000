@@ -1,5 +1,6 @@
 \guard
 
+\input{logic/defns/disjunction.tex}
 \input{setTheory/defns/set.tex}
 
 \begin{defn}
@@ -8,4 +9,6 @@
   Let $A$ and $B$ sets.
   The \emph{union} of $A$ and $B$, $A\cup B$ is the set which contains everything which is in $A$ or in $B$.
   \[ A\cup B := \set{ x \mid x\in A \vee x\in B}\,.\]
+  Let $A_i$ be a set for each $i\in I$, then \[ \bigcup_{i\in I} A_i:=\set{ x\mid \exists i\in I(x\in A_i)}\,.\]
+  In the case that $i=\set{i\in\ZZ\mid n\leq i \leq m }$ for some $n,m\in\ZZ\cup\set{\infty,-\infty}$, then we may write \[ \bigcup_{i=n}^m A_i := \bigcup_{i\in I} A_i\,.\]
 \end{defn}

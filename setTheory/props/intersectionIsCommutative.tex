@@ -1,0 +1,15 @@
+\guard
+
+\input{setTheory/defns/intersection.tex}
+
+\begin{prop}
+\label{prop:intersectionIsCommutative}
+  For any $A$ and $B$, $A\cap B = B\cap A$.
+\end{prop}
+\begin{proof}
+  \begin{align*}
+    A\cap B &= \set{ x\mid x\in A \wedge x\in B } \\
+            &= \set{ x\mid x\in B \wedge x\in A } \\
+            &= B\cap A
+  \end{align*}
+\end{proof}
