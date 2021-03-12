@@ -1,0 +1,19 @@
+\guard
+
+\input{setTheory/defns/emptyset.tex}
+\input{setTheory/defns/subset.tex}
+\input{setTheory/defns/intersection.tex}
+
+\input{setTheory/props/emptysetIsSubsetOfEverySet}
+\input{setTheory/props/intersectionIsSubadditive.tex}
+
+\begin{prop}
+\label{prop:intersectionWithEmptysetIsEmpty}
+  For any $A$, $A\cap\emptyset=\emptyset$.
+\end{prop}
+\begin{proof}
+  Let $A$ be arbitrary.
+  Applying Proposition \ref{prop:intersectionIsSubadditive}, we have that $A\cap\emptyset\subseteq \emptyset$.
+  Further, Proposition \ref{prop:emptysetIsSubsetOfEverySet}, we have that $\emptyset\subseteq A\cap\emptyset$.
+  Thus, $A\cap\emptyset=\emptyset$.
+\end{proof}

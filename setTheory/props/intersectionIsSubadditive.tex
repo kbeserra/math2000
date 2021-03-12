@@ -1,0 +1,16 @@
+\guard
+
+\input{setTheory/defns/subset.tex}
+\input{setTheory/defns/intersection.tex}
+
+\begin{prop}
+\label{prop:intersectionIsSubadditive}
+  For any $A$ and $B$, $A\cap B\subseteq B$.
+\end{prop}
+\begin{proof}
+  Let $A$ and $B$ be arbitrary.
+  Fix any $x\in A\cap B$.
+  As $x\in A\cap B$, $x\in A$ and $x\in B$.
+  Thus, $x\in A\cap B$.
+  But, $x$ was arbitrary, so $A\cap B\subseteq B$.
+\end{proof}

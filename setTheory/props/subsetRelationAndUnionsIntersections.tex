@@ -1,0 +1,39 @@
+\guard
+
+\input{setTheory/defns/subset.tex}
+\input{setTheory/defns/intersection}
+\input{setTheory/defns/union.tex}
+
+\input{setTheory/props/intersectionIsSubadditive.tex}
+\input{setTheory/props/unionIsAdditive.tex}
+
+\begin{prop}
+\label{prop:subsetRelationAndUnionsIntersections}
+  For any $A$ and $B$.
+  If $A\subseteq B$, then
+  \begin{enumerate}
+    \item $A\cap B = A$ and
+    \item $A\cup B = B$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  Fix $A$ and $B$.
+  Suppose that $A\subseteq B$.
+  \begin{enumerate}
+    \item By Proposition \ref{prop:intersectionIsSubadditive}, $A\cap B\subseteq A$.
+      It remains to show that $A\subseteq A\cap B$.
+      Fix any $a\in A$.
+      As $a\in A$ and $A\subseteq B$, $a\in B$.
+      Thus, $a\in A$ and $a\in B$.
+      So, $a\in A\cap B$, showing that $A\subseteq A\cap B$.
+
+    \item By Proposition \ref{prop:unionIsAdditive}, $B\subseteq A\cup B$.
+      It remains to show that $A\cup B\subseteq B$.
+      Fix any $b\in A\cup B$.
+      By the Definition \ref{defn:union}, $b\in A$ or $b\in B$.
+      If $b\in A$, then as $A\subseteq B$ $b\in B$.
+      So, in either case we have that $b\in B$.
+      Whence, $A\cap B\subseteq B$.
+      Showing that $A\cap B= B$
+  \end{enumerate}
+\end{proof}

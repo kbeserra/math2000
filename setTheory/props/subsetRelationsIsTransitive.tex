@@ -1,0 +1,16 @@
+\guard
+
+\input{setTheory/defns/subset.tex}
+
+\begin{prop}
+\label{prop:subsetRelationsIsTransitive}
+  For any $A$, $B$, and $C$.
+  If $A\subseteq B$ and $B\subseteq C$, then $A\subseteq C$.
+\end{prop}
+\begin{proof}
+  Fix $A$, $B$, and $C$ such that $A\subseteq B$ and $B\subseteq C$.
+  Fix $a\in A$.
+  As $A\subseteq B$, $a\in B$.
+  As $B\subseteq C$, $a\in C$.
+  But, $a\in A$ was arbitrary, so $A\subseteq C$.
+\end{proof}

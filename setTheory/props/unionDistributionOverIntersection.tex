@@ -1,0 +1,27 @@
+\guard
+
+\input{setTheory/defns/subset.tex}
+\input{setTheory/defns/union.tex}
+\input{setTheory/defns/intersection.tex}
+
+\begin{prop}
+\label{prop:unionDistributionOverIntersection}
+  For any $A$, $B$, and $C$, \[ A\cup( B\cap C) = (A\cup B) \cap (A\cup C)\,. \]
+\end{prop}
+\begin{proof}
+  Let $A$, $B$, and $C$ be arbitrary.
+
+  ($\subseteq$) Fix $x\in A\cup( B\cap C)$.
+    By Definition \ref{defn:union},  $x\in A$ pr $x\in(B\cap C)$.
+
+    If $x\in A$, then $x\in A\cup B$ and $x\in A\cup C$.
+    Thus, $x\in (A\cup B) \cap (A\cup C)$.
+
+    If $x\in B\cap C$, then $x\in B$ and $x\in C$.
+    As $x\in B$ and $x\in C$, $x\in A\cup B$ and $x\in A\cup C$.
+    So, $x\in (A\cup B) \cap (A\cup C)$.
+
+    But, $x\in  A\cup( B\cap C)$ was arbitrary, so \[ A\cup( B\cap C) \subseteq (A\cup B) \cap (A\cup C)\,.\]
+
+  ($\supseteq$)
+\end{proof}

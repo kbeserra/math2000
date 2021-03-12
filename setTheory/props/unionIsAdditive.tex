@@ -1,0 +1,16 @@
+\guard
+
+\input{setTheory/defns/subset.tex}
+\input{setTheory/defns/union.tex}
+
+\begin{prop}
+\label{prop:unionIsAdditive}
+  For any $A$ and $B$, $A\subseteq A\cup B$.
+\end{prop}
+\begin{proof}
+  Let $A$ and $B$ be arbitrary.
+  Fix any $x\in A$.
+  As $x\in A$, $x\in A$ or $x\in B$.
+  Thus, $x\in A\cup B$.
+  But, $x$ was arbitrary, so $A\subseteq A\cup B$.
+\end{proof}
