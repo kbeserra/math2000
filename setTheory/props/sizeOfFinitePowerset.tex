@@ -1,0 +1,32 @@
+\guard
+
+\input{setTheory/defns/emptyset.tex}
+\input{setTheory/defns/powerSet.tex}
+
+
+\begin{prop}
+\label{prop:sizeOfFinitePowerset}
+  For all $n\in\NN$, if $X$ is a set with $n$ elements, then $\mathcal{P}$ has $2^n$ elements.
+\end{prop}
+\begin{proof}
+  We prove this by induction on $n$.
+
+  In the case where $n=0$.
+  Then, the only set with $0$ elements is the emptyset.
+  We now see \[\mathcal{P}(\emptyset) = \set{\emptyset} \,\] has $2^0=1$ elements.
+
+  Now, suppose $n\in\NN$ and the power set of any set with $n$ elements has  $2^n$ elements.
+  Let $X$ be a set with $n+1$ many elements.
+  As $X$ has $n+1$ many elements, there exists some $x\in X$.
+  Fix any $x\in X$.
+
+  Note, $X\setminus\set{x}$ has $n$ elements.
+  So, by our inductive hypothesis $\mathcal{P}(X\setminus\set{x})$ has $2^n$ elements.
+
+  $\mathcal{P}(X\setminus\set{x})$ contains half of the elements in $\mathcal{P}(X)$.
+  In particular, it is missing all the subsets of $X$ which contain $x$.
+  Note \[ \mathcal{P}(X) = \mathcal{P}(X\setminus\set{x}) \cup \set{ A\cup\set{x} \mid A\in \mathcal{P}(X\setminus\set{x}) }\,.\]
+  As $\mathcal{P}(X\setminus\set{x})$ has $2^n$ elements, $\set{ A\cup\set{x} \mid A\in \mathcal{P}(X\setminus\set{x}) }$ has $2^n$ many elements.
+  Further, as each element of $\mathcal{P}(X\setminus\set{x})$ does not contain $x$ and each element of $\set{ A\cup\set{x} \mid A\in \mathcal{P}(X\setminus\set{x}) }$ does, those two sets are disjoint.
+  This, $\mathcal{P}(X)$ has $2\cdot 2^n=2^{n+1}$ elements.
+\end{proof}

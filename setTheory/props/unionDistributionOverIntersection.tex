@@ -23,5 +23,15 @@
 
     But, $x\in  A\cup( B\cap C)$ was arbitrary, so \[ A\cup( B\cap C) \subseteq (A\cup B) \cap (A\cup C)\,.\]
 
-  ($\supseteq$)
+  ($\supseteq$) Fix $x\in (A\cup B)\cap (A\cup B)$.
+  Then, $x\in A\cup B$ and $x\in A\cup C$.
+  Either $x$ is in $A$ or it is not.
+
+  If $x$ is in $A$, when $x\in A\cup(B\cap C)$, and we are done.
+
+  Suppose $x$ is not in $A$.
+  As $x\in A\cup B$ and $x$ is not in $A$, $x\in B$.
+  Similarly, as $x\in A\cup B$ and $x\not\in A$, $x\in C$.
+  Thus, $x\in B\cap C$.
+  Whence, $x\in A\cup(B\cap C)$.
 \end{proof}
