@@ -1,0 +1,32 @@
+\guard
+
+\input{numberTheory/defns/modDiv.tex}
+\input{setTheory/props/functionEquality.tex}
+
+\begin{exmp}
+\label{exmp:functionEquality}
+  Set $X = {0,1,2}$ and defin $f,g:X\to Y$ as \[ f(x) = (x^2+x+1)\mod 3\,,\] and \[ g(x) = (x+1)^2 \mod 3\,.\]
+  Does $f=g$?
+
+  As
+  \begin{align*}
+    f(0)  &= 1  &= g(0)
+    f(1)  &= 0  &= g(1)
+    f(2)  &= 1  &= g(2)
+  \end{align*}
+  Proposition \ref{prop:functionEquality} gives that $f=g$.
+
+
+  For any function $a,b:\RR\to\RR$, define $(a+b):\RR\to\RR$ as $\forall x\in RR$ $(a+b)(x) := a(x) + b(x)$.
+  Let $f,g:\RR\to\RR$ be arbitrary.
+  Does $f+g = g+f$.
+
+  Again, yes.
+  As $\forall x\in \RR$
+  \begin{align*}
+    (f+g)(x)  &= f(x) + g(x) \\
+              &= g(x) + f(x) \\
+              &= (g+f)(x)\,.
+  \end{align*}
+  So, using the same proposition as before, we have that $f=g$.
+\end{exmp}

@@ -1,0 +1,36 @@
+\guard
+
+\input{setTheory/defns/function.tex}
+\input{setTheory/defns/functionDomain.tex}
+\input{setTheory/defns/functionRange.tex}
+
+\begin{prop}
+\label{prop:functionEquality}
+  Given functions $f,g:X\to Y$, we say that $f=g$ if, and only if, $\forall x\in X(f(x)=g(x))$.
+\end{prop}
+\begin{proof}
+  Let$f,g:X \to Y$ be arbitrary functions.
+  As $f$ and $g$ share domain and co-domain, $f,g\subseteq X\times Y$.
+
+  Suppose $\forall x\in X(f(x) = g(x))$.
+  Then for any $(x,y)\in X\times Y$,
+  \begin{align*}
+    (x,y)\in f  &\iff f(x) = y \\
+                &\iff g(x) = y \\
+                &\iff (x,y)\in g\,.
+  \end{align*}
+  Thus, $f=g$ as sets.
+
+  For the converse, suppose $f=g$ as sets.
+  Fix any $x\in X$.
+  Then, for any $y\in Y$
+  \begin{align*}
+    f(x)=y  &\iff (x,y)\in f \\
+            &\iff (x,y)\in g \\
+            &\iff g(x) = y\,.
+  \end{align*}
+  Thus $f(x)=y$ if, and only if, $g(x) = y$.
+
+  Though, for any $x\in X$, there is a unique $y$ such that $f(x)=y$.
+  Thus $\forall x\in X( f(x) = g(x) )$.
+\end{proof}
