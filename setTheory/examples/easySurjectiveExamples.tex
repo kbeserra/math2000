@@ -1,0 +1,32 @@
+\guard
+
+\input{setTheory/defns/surjective.tex}
+
+\begin{exmp}
+\label{exmp:easySurjectiveExamples}
+  \begin{enumerate}
+    \item Show that $f:\RR\to\RR$ defined as $f(x) = 4x-1$ is surjective.\\
+    Fix any $y\in \RR$.
+    Our job is to find some $x\in\RR$ such that $f(x)=y$.
+    Given our selection of $y$, set $x = \frac{y+1}{4}$.
+    We claim that this $x$ works,
+    \begin{align*}
+      f(x)  &=  4x-1 \\
+            &=  4\frac{y+1}{4} - 1 \\
+            &=  y+1 - 1 \\
+            &=  y\,.
+    \end{align*}
+    Thus, for each $y\in\RR$ we can find some $x\in\RR$ such that $f(x)=y$.
+    Thus, $f$ is surjective.
+
+    \item Show that $g:\RR\to\RR$ defined by $g(x)=x^2$ is not surjective.\\
+    To do this, we need only produce some $y\in\RR$ such that there does not exist a $x\in\RR$ such that $g(x)=y$.
+    Consider $y=-1$.
+    Note, $\forall x\in\RR$ $x^2\geq 0$, thus there does not exist an $x\in\RR$ such that $g(x)=-1$.
+    Thus, $g$ is not surjective.
+
+    Note, we can change the codomain of $g$ to make the function surjective.
+    How? 
+  \end{enumerate}
+
+\end{exmp}

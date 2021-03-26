@@ -1,0 +1,28 @@
+\guard
+
+\input{setTheory/defns/injective.tex}
+
+\begin{exmp}
+\label{exmp:easyInjectiveExamples}
+  \begin{enumerate}
+    \item Show that $f:\RR\to\RR$ defined as $f(x) = 4x-1$ is injective.\\
+    Like many proofs of infectivity, we will show the contrapositive of Definition \ref{defn:injective}.
+    Fix $x,y\in\RR$ and suppose that $f(x)=f(y)$.
+    Then,
+    \begin{alignat*}{2}
+      && f(x)&=f(y) \\
+      &\Rightarrow\quad& 4x-1 &= 4y-1 \\
+      &\Rightarrow\quad& 4x &= 4y \\
+      &\Rightarrow\quad& x &= y \,.\\
+    \end{alignat*}
+    Thus, $\forall x,y\in\RR(f(x)=f(y)\rightarrow x=y)$.
+
+    \item Show that $g:\RR\to\RR$ defined by $g(x)=x^2$ is not injective.\\
+    To do this, we need only show that there exists distinct $x,y\in\RR$ such that $g(x)=g(y)$.
+    Note that $-1,1\in\RR$ and $-1\not= 1$, but $g(1)=g(-1)$.
+
+    Note, we can change the domain of $g$ to make the function injective.
+    How?
+  \end{enumerate}
+
+\end{exmp}
