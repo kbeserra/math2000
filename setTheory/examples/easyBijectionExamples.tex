@@ -1,0 +1,45 @@
+\guard
+
+\input{setTheory/examples/easyInjectiveExamples.tex}
+\input{setTheory/examples/easySurjectiveExamples.tex}
+
+\input{setTheory/defns/bijection.tex}
+
+\begin{exmp}
+\label{exmp:easyBijectionExamples}
+  \begin{enumerate}
+    \item Show that $f(x) = 4x-1$ is a bijection.\\
+
+    In Examples \ref{exmp:easyInjectiveExamples} and \ref{exmp:easySurjectiveExamples} respectively, we showed that $f$ is injective and surjective.
+    So, as $f$ is both an injection and a surjection, $f$ is a bijection.
+
+    \item Show that $f:\RR^2\to\RR^2$ defined by \[ g(x,y) = (x+y,x-y)\] is a bijection.\\
+
+    First, we show that $g$ is injective.
+    Fix $x,y,a,b\in\RR$ such that $g(x,y) = g(a,b)$.
+    Then by definiton of $g$, we have that
+    \begin{alignat*}{2}
+      && g(x,y)&=g(a,b) \\
+      &\Rightarrow\quad& (x+y,x-y) &= (a+b,a-b) \\
+      &\Rightarrow\quad& (x+y = a+b)\wedge (x-y=a-b)\,.
+    \end{alignat*}
+    Adding these two equalities gives that $ 2x = 2a$.
+    So, $x=a$.
+    Now, as $x=a$ and $x+y = a+b$, we have that $y=b$.
+    Thus, $(x,y)=(a,b)$.
+    So $g$ is injective.
+
+    Now, to show that $g$ is surjective.
+    Fix $u,v\in\RR$.
+    Let $x = \frac{u+v}{2}$ and $y=\frac{u-v}{2}$.
+    Then, we can note that
+    \begin{align*}
+      g(x,y)  &= \left( \frac{u+v}{2}+\frac{u-v}{2}, \frac{u+v}{2}-\frac{u-v}{2} \right)\\
+              &= \left( \frac{u+v+u-v}{2}, \frac{u+v-u+v}{2} \right)\\
+              &= \left( \frac{2u}{2}, \frac{2v}{2} \right)\\
+              &= \left( u, v \right)
+    \end{align*}
+    So, $g$ is injective.
+  \end{enumerate}
+
+\end{exmp}

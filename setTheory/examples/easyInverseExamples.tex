@@ -1,0 +1,24 @@
+\guard
+
+\input{setTheory/examples/easyBijectionExamples.tex}
+\input{setTheory/defns/functionInverse.tex}
+
+\begin{exmp}
+\label{exmp:easyBijectionExamples}
+  \begin{enumerate}
+    \item Compute $f^{-1}$ given $f(x) = 4x-1$.\\
+
+    First, we performa sanity check and ask if $f^{-1}$ makes sense given our function $f$.
+    As we showed in Example \ref{exmp:easyBijectionExamples}, $f$ as above is a bijection.
+    So, this by Proposition \ref{prop:existenceOfInverseFunction} $f^{-1}$ does exists.
+    In fact, we have computed the inverse already, in Example \ref{exmp:easySurjectiveExamples}, it is \[ f^{-1}(y) = \frac{y+1}{4}\,.\]
+
+    \item Compute the inverse of the function $g(x,y) = (x+y,x-y)$.\\
+
+    Again, we have already shown that this $g$ is a bijection.
+    Further, in Example \ref{exmp:easyBijectionExamples}, while showing that $g$ was a surjection, we nearly computed the inverse of $g$.
+    Putting together the work we did there, it is not difficult to see that \[ g^{-1}(u,v) = \left( \frac{ u+v}{2}, \frac{u-v}{2} \right)\,.\]
+
+  \end{enumerate}
+
+\end{exmp}
