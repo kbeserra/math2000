@@ -1,0 +1,30 @@
+\guard
+
+\input{setTheory/props/functionEquality.tex}
+\input{setTheory/defns/functionComposition.tex}
+\input{setTheory/defns/identityFunction.tex}
+
+\begin{prop}
+\label{prop:compositionIdentity}
+  Let $f:X\to Y$ and $\id_X$, $\id_Y$ the identity functions on $X$ and $Y$ respectively.
+  Then $f\circ\id_X=f$ and $\id_Y\circ f = f$.
+\end{prop}
+\begin{proof}
+  Fix any $x\in X$.
+  Then,
+  \begin{align*}
+    (f\circ\id_X)(x)  &= f(\id_X(x)) \\
+                      &= f(x)
+  \end{align*}
+  So, $\forall x\in X(\,(f\circ\id_X)(x)=f(x)\,)$.
+  Thus, by Proposition \ref{prop:functionEquality}, $f\circ\id_X = f$.
+
+  $\id_Y\circ f = f$ is similar.
+  Fix any $x\in X$.
+  Then,
+  \begin{align*}
+    (\id_Y\circ f)(x) &= \id_Y( f(x)) \\
+                      &= f(x) \\
+  \end{align*}
+  So, again by Proposition \ref{prop:functionEquality}, we have that $\id_Y\circ f = f$.
+\end{proof}

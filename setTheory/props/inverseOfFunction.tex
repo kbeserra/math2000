@@ -1,0 +1,25 @@
+\guard
+
+\input{setTheory/props/functionEquality.tex}
+\input{setTheory/defns/inverse.tex}
+\input{setTheory/defns/functionComposition.tex}
+
+
+\begin{prop}
+\label{prop:inverseOfFunction}
+  If $f:X\to Y$ is a bijection with inverse $f^{-1}:Y\to X$, then $f^{-1}\circ f=\id_X$.
+\end{prop}
+\begin{proof}
+  Fix $f:X\to Y$ a bijection.
+  Fix $x\in X$.
+  Set $y=f(x)$.
+  By definition of $f^{-1}$, $f^{-1}(y) = x$.
+  So, we have that
+  \begin{align*}
+    (f^{-1}\circ f )(x) &= f^{-1}(f(x)) \\
+                        &= f^{-1}(y) \\
+                        &= x\,.
+  \end{align*}
+  Though, as $x\in X$ was arbitrary, we have that $\forall x\in X( f^{-1}\circ f=\id_X)$.
+  Thus, by Proposition \ref{prop:functionEquality}, $f^{-1}\circ f=\id_X$.
+\end{proof}

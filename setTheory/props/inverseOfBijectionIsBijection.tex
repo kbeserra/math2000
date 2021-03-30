@@ -1,0 +1,25 @@
+\guard
+
+\input{setTheory/defns/bijection.tex}
+\input{setTheory/defns/inverse.tex}
+
+\begin{prop}
+\label{prop:inverseOfBijectionIsBijection}
+  If $f:X\to Y$ is a bijections, then $f^{-1}$ is a bijection.
+\end{prop}
+\begin{proof}
+  Fix $f:X\to Y$ a bijection.
+  We must show that $f^{-1}$ is an injection and a surjection.
+
+  To show that $f^{-1}:Y\to X$ is an injection, fix $y_1,y_2\in Y$.
+  Suppose that $f^{-1}(y_1)=f^{-1}(y_2)$.
+  Set $x = f^{-1}(y_1)\in X$.
+  By definition of $f^{-1}$, $f(x)=y_1$
+  Further, as $f^{-1}(y_1)=f^{-1}(y_2)$, $x = f^{-1}(y_2)$.
+  Whence, $f(x)=y_2$.
+  So, as $f(x)=y_1$ and $f(x)=y_2$, $y_1=y_2$.
+
+  To show that $f^{-1}$ is a surjection, fix some $x\in X$.
+  Now, set $y=f(x)$.
+  Then, by definition of $f^{-1}$, $f^{-1}(y)=x$.
+\end{proof}
