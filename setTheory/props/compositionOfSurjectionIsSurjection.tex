@@ -1,0 +1,21 @@
+\guard
+
+\input{setTheory/defns/injective.tex}
+\input{setTheory/defns/functionComposition.tex}
+
+\begin{prop}
+\label{prop:compositionOfSurjectionIsSurjection}
+  If $f:X\to Y$ and $g:Y\to Z$ are both surjective, then $g\circ f$ is surjective.
+\end{prop}
+\begin{proof}
+  Fix any $z\in Z$.
+  As $g$ is surjective, there exists some $y\in Y$ such that $g(y)=z$.
+  As $f$ is surjective, there exists some $x\in X$ such that $f(x)=z$.
+  Now, we note that
+  \begin{align*}
+    (g\circ f)(x) &= g(f(x)) \\
+                  &= g(y) \\
+                  &= z\,.
+  \end{align*}
+  Showing that $g\circ f$ is surjective.
+\end{proof}

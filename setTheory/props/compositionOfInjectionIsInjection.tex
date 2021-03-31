@@ -1,0 +1,15 @@
+\guard
+
+\input{setTheory/defns/injective.tex}
+\input{setTheory/defns/functionComposition.tex}
+
+\begin{prop}
+\label{prop:compositionOfInjectionIsInjection}
+  If $f:X\to Y$ and $g:Y\to Z$ are both injective, then $g\circ f$ is injective.
+\end{prop}
+\begin{proof}
+  Fix any $x,y\in X$ and suppose that $x\not=y$.
+  As $f$ is injective and $x\not=y$, $f(x)\not=f(y)$.
+  As $g$ is injective, and $f(x),f(y)\in Y$ are distinct, $g(f(x))\not= g(f(y))$.
+  Thus, $g\circ f$ is injective.
+\end{proof}
