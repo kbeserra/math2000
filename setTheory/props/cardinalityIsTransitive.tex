@@ -1,0 +1,16 @@
+\guard
+
+\input{setTheory/props/compositionOfBijectionsIsBijection.tex}
+\input{setTheory/defns/sameCardinality.tex}
+
+\begin{prop}
+\label{prop:cardinalityIsSymmetric}
+  For any sets $A$, $B$, and $C$ if $A$ has the same cardinality as $B$ and $B$ has the same cardinality as $C$, then $A$ has the same cardinality as $C$.
+\end{prop}
+\begin{proof}
+  Fix sets $A$, $B$, and $C$, and suppose that $A$ has the same cardinality as $B$ and $B$ has the same cardinality as $C$.
+  As $A$ has the same cardinality as $B$, there exists a bijection $f$ from $A$ to $B$.
+  As $B$ has the same cardinality as $C$, there exists a bijection $g$ from $B$ to $C$.
+  As $f$ and $g$ are bijections, applying Proposition \ref{prop:compositionOfBijectionsIsBijection}, $g\circ f$ is a bijection.
+  Thus, $g\circ f$ sees that $A$ has the same cardinality as $B$.
+\end{proof}

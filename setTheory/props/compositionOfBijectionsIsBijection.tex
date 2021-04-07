@@ -1,0 +1,15 @@
+\guard
+
+\input{setTheory/defns/bijection.tex}
+\input{setTheory/props/compositionOfInjectionIsInjection.tex}
+\input{setTheory/props/compositionOfSurjectionIsSurjection.tex}
+
+\begin{prop}
+\label{prop:compositionOfBijectionsIsBijection}
+  If $f:X\to Y$ and $g:Y\to Z$ are both bijective, then $g\circ f$ is bijective.
+\end{prop}
+\begin{proof}
+  As $f$ and $g$ are bijections, they are both surjective and injective.
+  Thus, by applying Propositions \ref{prop:compositionOfSurjectionIsSurjection} and \ref{prop:compositionOfInjectionIsInjection}, we have that $g\circ f$ is a surjective and injective.
+  Thus, as $g\circ f$ is a bijection.
+\end{proof}

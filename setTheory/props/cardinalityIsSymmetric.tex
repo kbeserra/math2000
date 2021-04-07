@@ -1,0 +1,15 @@
+\guard
+
+\input{setTheory/props/inverseOfBijectionIsBijection.tex}
+\input{setTheory/defns/sameCardinality.tex}
+
+\begin{prop}
+\label{prop:cardinalityIsSymmetric}
+  For any sets $A$ and $B$ if $A$ has the same cardinality as $B$, then $B$ has the same cardinality as $A$.
+\end{prop}
+\begin{proof}
+  Fix sets $A$ and $B$, and suppose that $A$ has the same cardinality as $B$.
+  As $A$ has the same cardinality as $B$, there exists a bijection $f$ from $A$ to $B$.
+  As $f$ is a bijection, Proposition \ref{prop:inverseOfBijectionIsBijection} gives that $f^{-1}$ is a bijection from $B$ to $A$.
+  Whence, $B$ has the same cardinality as $A$.
+\end{proof}
