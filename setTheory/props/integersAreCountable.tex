@@ -1,0 +1,22 @@
+\guard
+
+\input{setTheory/defns/sameCardinality.tex}
+\input{setTheory/defns/countable.tex}
+
+\begin{prop}
+\label{prop:integersAreCountable}
+  The set of integers, $\ZZ$, is countable.
+\end{prop}
+\begin{proof}
+  To show that $\ZZ$ is countable, we must show that either $\ZZ$ is finite or $\vert \ZZ\vert=\vert \NN\vert$.
+  To show that $\vert\ZZ\vert=\vert\NN\vert$ we will produce, explicitly, a bijection from $\ZZ$ to $\NN$.
+  To do this, we will keep $0$ where it is, map the negative integers to the even natural numbers, and the positive integers to the odd natural numbers.
+
+  One such mapping is $f:\ZZ\to\NN$ defined be \[ f(z) = \begin{cases}
+      0 & z= 0 \\
+      -2z & z<0 \\
+      2z-1 & z>0
+   \end{cases}\,. \]
+   It remains to show that this mapping has the desired properties.
+   This is left as an exercise to the reader.
+\end{proof}

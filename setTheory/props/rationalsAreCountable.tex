@@ -1,0 +1,25 @@
+\guard
+
+\input{setTheory/props/integersAreCountable.tex}
+\input{setTheory/thms/schroderBernstein.tex}
+
+\begin{prop}
+\label{prop:rationalsAreCountable}
+  The set of rationals, $\QQ$, is countable.
+\end{prop}
+\begin{proof}
+  We will show this in steps.
+  Assume that we have constructed a bijection $f:\ZZ^+\to \QQ^+$.
+  Note this map, after multiplying by $-1$, sees that negative rationals are have the same cardinality as $\ZZ$ as well.
+  Now, with this bijection, we can form a bijection $g:\ZZ\to\QQ$ defined as as \[ g(z) = \begin{cases}
+      0 & z= 0 \\
+      -f(z) & z<0 \\
+      f(z) & z>0
+   \end{cases} \]
+   for each $z\in\ZZ$.
+   With this bijection in hand, we use the fact that $\ZZ$ is countable, Proposition \ref{prop:integersAreCountable}, together with Proposition \ref{prop:cardinalityIsTransitive} to obtain that $\QQ$ is countable.
+
+   So, it remains to show that there is a bijection $f:\ZZ^+\to\QQ^+$.
+   (There is a classic zig-zag argument which informally describes such a bijection. This zig-zagging can be made formal, and a closed form of that description can be written. I will present that in lecture, but for the notes I will show a different way.)
+   As $\ZZ^+\subset \QQ^+$, there exists, trivially, an injection $\ZZ^+\to\QQ^+$.
+\end{proof}
