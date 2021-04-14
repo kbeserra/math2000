@@ -2,6 +2,7 @@
 
 \input{setTheory/props/integersAreCountable.tex}
 \input{setTheory/thms/schroderBernstein.tex}
+\input{setTheory/props/naturalsCrossNaturalsisCountable.tex}
 
 \begin{prop}
 \label{prop:rationalsAreCountable}
@@ -13,7 +14,7 @@
   Note this map, after multiplying by $-1$, sees that negative rationals are have the same cardinality as $\ZZ$ as well.
   Now, with this bijection, we can form a bijection $g:\ZZ\to\QQ$ defined as as \[ g(z) = \begin{cases}
       0 & z= 0 \\
-      -f(z) & z<0 \\
+      -f(-z) & z<0 \\
       f(z) & z>0
    \end{cases} \]
    for each $z\in\ZZ$.
@@ -21,5 +22,17 @@
 
    So, it remains to show that there is a bijection $f:\ZZ^+\to\QQ^+$.
    (There is a classic zig-zag argument which informally describes such a bijection. This zig-zagging can be made formal, and a closed form of that description can be written. I will present that in lecture, but for the notes I will show a different way.)
-   As $\ZZ^+\subset \QQ^+$, there exists, trivially, an injection $\ZZ^+\to\QQ^+$.
+   As $\ZZ^+\subset \QQ^+$, there exists, trivially, an injection $\ZZ^+\to\QQ^+$, say $z\mapsto \frac{z}{1}$.
+   Though, as $\vert \ZZ^+\vert=\vert\NN\vert$, we can produce an injection from $\NN$ to $\QQ$, say $n\mapsto \frac{n+1}{1}$.
+
+   Define an injection from $\QQ^+$ to $\NN$ as follows
+   First, we define $h:\QQ^+\to\NN\times\NN$.
+   For each $r\in\QQ$, write $r=\frac{a}{b}$ where $\frac{a}{b}$ is completely reduced.
+   Define $h(r)=(a,b)$.
+   Certainly, this map is an injection.
+   We use the fact that $\vert\NN\times\NN\vert=\vert\NN\vert$ to obtain a bijection $i:\NN\times\NN\to\NN$.
+   Then $i\circ h$ is the desired injection.
+
+   Finally, applying Schroder-Bernstein Theorem, we have that there exists a bijection $f':\NN\to\QQ^+$.
+   Set $f:\ZZ^+\to\QQ^+$ to be $f'(n+1)$.
 \end{proof}

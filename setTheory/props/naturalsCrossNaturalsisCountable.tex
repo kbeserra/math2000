@@ -1,0 +1,28 @@
+\guard
+
+\input{numberTheory/thms/fundamentalTheoremOfArithmetic.tex}
+
+\input{setTheory/thms/schroderBernstein.tex}
+
+\input{setTheory/defns/cartesianProduct.tex}
+\input{setTheory/defns/countable.tex}
+
+\begin{prop}
+\label{prop:naturalsCrossNaturalsisCountable}
+  The set $\NN\times\NN$ is countable.
+\end{prop}
+\begin{proof}
+  Define a function $f:\NN\times\NN\to\NN$ as $f(n,m)=2^n3^m$ for each $(n,m)\in\NN$.
+  We claim that $f$ is an injection.
+  Fix $(a,b),(n,m)\in\NN\times\NN$ and suppose that $f(a,b)=f(n,m)$.
+  Let $z=f(a,b)=f(n,m)$.
+  So, $2^a3^b = z = 2^n3^m$.
+  Using the Fundamental Theorem Of Arithmetic, Theorem \ref{thm:fundamentalTheoremOfArithmetic}, $z$ has a unique prime factorization.
+  Thus, $a=n$ and $b=m$
+  So, $(a,b) = (n,m)$.
+  Thus, $f$ is injective.
+
+  Finally, the map $n\mapsto (n,1)$ is an injection from $\NN$ to $\NN\times\NN$.
+  Thus, Theorem \ref{thm:schroderBernstein} gives that there exists a bijection between $\NN$ and $\NN\times\NN$.
+  Thus, $\NN\times\NN$ is countable.
+\end{proof}
